@@ -1,16 +1,16 @@
 # 🗾 Japan Reisebericht
 
-Ein interaktiver **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Dieses Projekt entsteht im Rahmen des IU-Moduls **Web-Programmierung** und begleitet den Lernprozess von _Vanilla HTML/CSS_ bis hin zu _Next.js_.
+Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Dieses Projekt entsteht im Rahmen des IU-Moduls **Web-Programmierung** und begleitet den Lernprozess von _Vanilla HTML/CSS_ bis hin zu _Next.js_.
 
 ---
 
 ## 🧭 Projektphasen
 
-| Phase       | Ziel                                                 | Status       |
-| :---------- | :--------------------------------------------------- | :----------- |
-| **Phase 1** | Konzept & responsive Grundstruktur _(2 Breakpoints)_ | 🚧 in Arbeit |
-| **Phase 2** | Feinschliff, Inhalte & Medienintegration             | ⏳ geplant   |
-| **Phase 3** | Portierung nach **Next.js** inkl. Tailwind & SEO     | 🔮 geplant   |
+| Phase       | Ziel                                                       | Status       |
+| :---------- | :--------------------------------------------------------- | :----------- |
+| **Phase 1** | Konzept & responsive Grundstruktur _(mind. 2 Breakpoints)_ | 🚧 in Arbeit |
+| **Phase 2** | Feinschliff, Inhalte & Medienintegration                   | ⏳ geplant   |
+| **Phase 3** | Portierung nach **Next.js** inkl. Tailwind & SEO           | 🔮 geplant   |
 
 ---
 
@@ -30,7 +30,7 @@ Ein interaktiver **Reisebericht** mit Landeskunde, Städten und persönlichen Mo
 - **Barrierefreiheit** gemäß **WCAG 2.1** & **WAI-ARIA**
 - **Flexbox & CSS Grid** für Layouts
 - **Mobile-first Design**
-- **Breakpoints:** 768 px (Tablet), 1024 px (Desktop)
+- **Breakpoints:** 640/768 px (Tablet), 1024 px (Desktop)
 - **Zukunft:** Migration zu Next.js + TailwindCSS
 
 ---
@@ -50,9 +50,9 @@ Ein interaktiver **Reisebericht** mit Landeskunde, Städten und persönlichen Mo
 
 - [ ] Alle Seiten (Skeleton) und Navigation vorhanden
 - [ ] Mindestens ein Grid- oder Flex-Layout je Seite
-- [ ] Zwei Breakpoints greifen (360 – 1920 px)
+- [ ] Breakpoints greifen (360 – 1920 px)
 - [ ] Barrierefreiheit nach **WCAG 2.1** & **WAI-ARIA** (Semantik, Alternativtexte, Fokusreihenfolge)
-- [ ] Konzept-PDF abgelegt und im Repo versioniert
+- [x] Konzept-PDF abgelegt und im Repo versioniert
 
 ---
 
