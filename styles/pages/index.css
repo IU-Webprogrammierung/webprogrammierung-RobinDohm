@@ -1,5 +1,5 @@
 /* Section Settings (mobil: Text vor Bild) */
-#hero,
+#index-hero,
 #why-japan,
 #language,
 #preparation,
@@ -12,17 +12,17 @@
 }
 
 /* HERO */
-.hero-content {
+.index-hero-content {
   grid-area: content;
 }
 
-.hero-content h1,
-.hero-content p {
+.index-hero-content h1,
+.index-hero-content p {
   margin-inline: auto;
   max-width: 38rem;
 }
 
-.hero-image {
+.index-hero-image {
   grid-area: img;
   width: 100%;
 }
@@ -83,7 +83,7 @@
 /* === Tablet (≥768px) === */
 @media (min-width: 768px) {
   /* Section Settings (Text links; Bild rechts) */
-  #hero,
+  #index-hero,
   #language,
   #itinerary {
     grid-template-columns: 1fr 1fr;
