@@ -37,10 +37,10 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 ## 🧱 Projektstruktur
 
-/pages → HTML-Seiten
-/styles → Base-, Layout- & Komponenten-CSS
-/public/img → Bilder & Medien
-/docs → Konzept- & Abgabedokumente
+- /pages → HTML-Seiten
+- /styles → Base-, Layout- & Komponenten-CSS
+- /public/img → Bilder & Medien
+- /docs → Konzept- & Abgabedokumente
 
 ---
 
