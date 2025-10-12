@@ -1,0 +1,117 @@
+/* Section Settings (mobil: Text vor Bild) */
+#hero,
+#why-japan,
+#language,
+#preparation,
+#itinerary {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "content"
+    "img";
+}
+
+/* HERO */
+.hero-content {
+  grid-area: content;
+}
+
+.hero-content h1,
+.hero-content p {
+  margin-inline: auto;
+  max-width: 38rem;
+}
+
+.hero-image {
+  grid-area: img;
+  width: 100%;
+}
+
+/* WHY */
+.why-content {
+  grid-area: content;
+}
+.why-image {
+  grid-area: img;
+  width: 100%;
+}
+
+/* LANGUAGE */
+.language-content {
+  grid-area: content;
+}
+.language-image {
+  grid-area: img;
+  width: 100%;
+}
+
+/* PREPARATION */
+.preparation-content {
+  grid-area: content;
+}
+.preparation-image {
+  grid-area: img;
+  width: 100%;
+}
+
+/* ITINERARY */
+.itinerary-content {
+  grid-area: content;
+}
+.itinerary-image {
+  grid-area: img;
+  width: 100%;
+}
+
+.itinerary-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itinerary-list > li {
+  margin: 0 0 1rem;
+}
+.itinerary-list h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+}
+.itinerary-list p {
+  margin: 0;
+  color: #333;
+}
+
+/* === Tablet (≥768px) === */
+@media (min-width: 768px) {
+  /* Section Settings (Text links; Bild rechts) */
+  #hero,
+  #language,
+  #itinerary {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content img";
+    align-items: center;
+  }
+
+  /* Section Settings (Text rechts; Bild links) */
+  #why-japan,
+  #preparation {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img content";
+    align-items: center;
+  }
+}
+/* === Desktop (≥1024px) === */
+@media (min-width: 1024px) {
+  /* Etwas mehr Raum */
+  :root {
+    --gap: 1.25rem;
+  }
+}
+
+/* === Desktop Delayed === */
+@media (min-width: 1090px) {
+  /* Headings linksbündig */
+  h1,
+  h2 {
+    text-align: left;
+  }
+}

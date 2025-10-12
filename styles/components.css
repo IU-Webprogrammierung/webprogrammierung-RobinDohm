@@ -1,0 +1,57 @@
+/* === Layout (mobile-first → Tablet → Desktop) === */
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding-block: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.main-nav {
+  display: none;
+}
+.main-nav a {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.main-nav a:hover {
+  background: #f3f4f6;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 1rem;
+}
+
+.site-footer p {
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* === Tablet (≥768px) === */
+@media (min-width: 768px) {
+  /* Header */
+  .main-nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+  .footer-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
