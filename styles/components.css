@@ -18,7 +18,12 @@
   border-radius: 0.25rem;
 }
 .main-nav a:hover {
-  background: #f3f4f6;
+  color: #1576f5;
+}
+
+.main-nav a.active {
+  font-weight: bold;
+  color: #0552b8;
 }
 
 /* Footer */

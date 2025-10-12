@@ -63,3 +63,20 @@ h1,
 h2 {
   text-align: center;
 }
+
+/* === Desktop (≥1024px) === */
+@media (min-width: 1024px) {
+  /* Etwas mehr Raum */
+  :root {
+    --gap: 1.25rem;
+  }
+}
+
+/* === Desktop Delayed === */
+@media (min-width: 1090px) {
+  /* Headings linksbündig */
+  h1,
+  h2 {
+    text-align: left;
+  }
+}
