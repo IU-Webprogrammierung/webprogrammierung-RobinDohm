@@ -1,0 +1,96 @@
+/* ===== Japan – mobile first ===== */
+
+/* ===== Geografie & Natur ===== */
+.jp-geo {
+  display: grid;
+  gap: 1rem;
+  padding-block: var(--space);
+  grid-template-areas:
+    "text"
+    "facts"
+    "img"; /* Mobile: Text -> Facts -> Bild */
+}
+
+.jp-geo-text {
+  grid-area: text;
+}
+.jp-geo-facts {
+  grid-area: facts;
+}
+.jp-geo-media {
+  grid-area: img;
+}
+
+.jp-geo-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.jp-geo-media img.mobile {
+  display: block; /* Mobile-Bild mobil anzeigen */
+}
+
+.jp-geo-media img.desktop {
+  display: none; /* Desktop-Bild mobil ausblenden */
+}
+
+.jp-geo-text p {
+  color: #333;
+}
+
+/* Facts-Karte */
+.jp-geo-facts {
+  padding: 1rem;
+}
+
+.jp-geo-facts ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+.jp-geo-facts li {
+  margin-bottom: 0.25rem;
+}
+
+/* ===== Kultur & Gesellschaft ===== */
+.jp-culture {
+  padding-block: var(--space);
+}
+
+.jp-culture p {
+  color: #333;
+}
+
+/* ===== Tablet (≥768px) ===== */
+@media (min-width: 768px) {
+  /* ===== Geografie & Natur ===== */
+  .jp-geo {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "text text"
+      "img  facts";
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* ===== Desktop (≥1024px) ===== */
+@media (min-width: 1024px) {
+  /* ===== Geografie & Natur ===== */
+  .jp-geo {
+    grid-template-columns: 1.1fr 1fr; /* etwas mehr Raum fürs Bild links */
+    grid-template-areas:
+      "img text"
+      "img facts";
+    gap: 1.25rem;
+  }
+
+  .jp-geo-media img.mobile {
+    display: none; /* Mobile-Bild mobil ausblenden */
+  }
+
+  .jp-geo-media img.desktop {
+    display: block; /* Desktop-Bild mobil anzeigen */
+  }
+}
