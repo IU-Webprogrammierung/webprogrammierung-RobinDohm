@@ -37,7 +37,7 @@
 
 .hero-text {
   position: absolute;
-  bottom: 0;
+  bottom: 1.28rem;
 
   /* semitransparente weiße Box */
   background: rgba(255, 255, 255, 0.65);
@@ -54,6 +54,62 @@
   display: block;
   height: calc(100dvh - 65px); /* 100% der Viewport-Höhe minus Header-Höhe */
   object-fit: cover; /* Bild wird zugeschnitten, um den Container auszufüllen */
+}
+
+/* Bildleiste: horizontal scroll mit Snap */
+.img-rail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.img-btn {
+  display: none; /* nur auf Desktop anzeigen */
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.img-btn-prev {
+  left: 0.25rem;
+}
+.img-btn-next {
+  right: 0.25rem;
+}
+
+.img-strip {
+  flex: 1 1 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
+
+  /* Scrollbar ausblenden */
+  scrollbar-width: none;
+}
+
+.img-strip::-webkit-scrollbar {
+  display: none;
+} /* WebKit */
+
+.img-strip img {
+  width: 100%;
+  height: clamp(140px, 24vw, 220px);
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  scroll-snap-align: start;
 }
 
 /* Footer */
@@ -112,11 +168,32 @@
     max-width: min(90%, 38rem);
   }
 
+  /* Bildleiste: horizontal scroll mit Snap */
+  .img-strip {
+    grid-auto-columns: 40%;
+  } /* zwei–drei Kacheln sichtbar */
+
   /* Footer */
   .footer-nav {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
+  }
+}
+
+/* ===== Desktop (≥1024px) ===== */
+@media (min-width: 1024px) {
+  /* Bildleiste: horizontal scroll mit Snap */
+  .img-strip {
+    grid-auto-columns: 30%;
+  } /* mehrere Kacheln sichtbar */
+
+  .img-btn {
+    display: grid;
+    place-items: center;
+  }
+  .img-btn:hover {
+    background: #fff;
   }
 }
