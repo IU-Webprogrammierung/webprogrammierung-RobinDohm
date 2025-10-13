@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="/styles/base.css" />
     <link rel="stylesheet" href="/styles/components.css" />
-    <link rel="stylesheet" href="/styles/pages/japan.css" />
+    <link rel="stylesheet" href="/styles/pages/wer-sind-wir.css" />
+
+    <script src="/scripts/carousell.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -34,6 +36,155 @@
             Zwei Abenteurer mit Liebe zu Japan und zueinander. Wir sind Robin
             und Jessi.
           </p>
+        </div>
+      </section>
+      <!-- Über uns -->
+      <section id="ueber-uns">
+        <h2>Über uns</h2>
+        <p class="about-intro">
+          Wir sind ein Team aus Neugier, Tee und Tempeln – und manchmal auch aus
+          viel Ramen. Wir reisen gern ohne großen Luxus, dafür mit offenen Augen
+          und Notizbuch. Diese Seite sammelt unsere schönsten Momente, kleine
+          Anekdoten und die Etappen unserer gemeinsamen Geschichte.
+        </p>
+
+        <div class="people">
+          <!-- Robin -->
+          <article class="person">
+            <h3 class="person-title">Robin</h3>
+            <img
+              class="person-img"
+              src="https://dummyimage.com/800x600/000/fff"
+              alt="Portrait von Robin"
+            />
+            <div class="person-text">
+              <p>
+                Techniknerd, der in Japan plötzlich Geduld beim Anstehen
+                entdeckt hat. Begeistert sich für Züge, Stadtviertel-Karten und
+                für das perfekte Foto kurz vor Sonnenuntergang.
+              </p>
+              <p>
+                Lieblingsmomente: erste Fahrt mit dem Shinkansen, Izakaya in
+                Osaka und der Blick über Kyoto vom Fushimi Inari.
+              </p>
+            </div>
+          </article>
+
+          <!-- Jessi (alternierend) -->
+          <article class="person person-alt">
+            <h3 class="person-title">Jessi</h3>
+            <div class="person-text">
+              <p>
+                Sprache, Kultur, Essen – am liebsten alles gleichzeitig. Liest
+                Menükarten schneller als Google Translate und findet selbst in
+                kleinen Seitenstraßen die gemütlichsten Cafés.
+              </p>
+              <p>
+                Lieblingsmomente: Bento-Kochkurs, Tempelgärten in Arashiyama und
+                spontane Gespräche auf Japanisch – auch wenn nicht jedes Wort
+                sitzt.
+              </p>
+            </div>
+            <img
+              class="person-img"
+              src="https://dummyimage.com/800x600/222/fff"
+              alt="Portrait von Jessi"
+            />
+          </article>
+        </div>
+      </section>
+
+      <!-- Banner -->
+      <section class="full-banner" aria-label="Banner">
+        <img
+          src="https://dummyimage.com/1920x600/777/fff"
+          alt="Zwischenbanner"
+        />
+      </section>
+
+      <!-- Unsere Geschichte (Timeline) -->
+      <section id="geschichte">
+        <h2>Unsere Geschichte</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+          ipsum tempore autem nesciunt commodi. Fugit debitis omnis minus sed.
+          Ipsam enim nemo rerum asperiores ea, nihil non blanditiis beatae
+          porro.
+        </p>
+        <ol class="timeline">
+          <li>
+            <strong>2019 / Januar</strong>
+            <span class="small"
+              >Wir lernen uns online kennen - über Overwatch (Videospiel).</span
+            >
+          </li>
+          <li>
+            <strong>2019 / April</strong>
+            <span class="small">Wir sind offiziell ein Paar.</span>
+          </li>
+          <li>
+            <strong>2020 / Mai</strong>
+            <span class="small"
+              >Jessi zieht zu Robin in den Norden (Nähe Kiel).</span
+            >
+          </li>
+          <li>
+            <strong>2021 / Juni</strong>
+            <span class="small"
+              >Robin mach Jessi den Antrag. PS: Sie hat „JA“ gesagt!</span
+            >
+          </li>
+          <li>
+            <strong>2023 / August</strong>
+            <span class="small">Unsere Hochzeit.</span>
+          </li>
+          <li>
+            <strong>2024 / Juli</strong>
+            <span class="small"
+              >Flitterwochen sind endlich angesagt: auf nach Japan!</span
+            >
+          </li>
+          <li>
+            <strong>Und jetzt</strong>
+            <span class="small"
+              >Wir schauen gemeinsam, was die Zukunft bringt.</span
+            >
+          </li>
+        </ol>
+      </section>
+
+      <!-- Lieblingsmomente (re-uses the img-rail component) -->
+      <section id="momente">
+        <h2>Unsere Lieblingsmomente</h2>
+        <div class="img-rail">
+          <button class="img-btn img-btn-prev" type="button" title="Zurück">
+            ‹
+          </button>
+          <div class="img-strip">
+            <img
+              src="https://dummyimage.com/600x400/0a0/fff"
+              alt="Shinkansen Moment"
+            />
+            <img
+              src="https://dummyimage.com/600x400/07a/fff"
+              alt="Izakaya Abend in Osaka"
+            />
+            <img
+              src="https://dummyimage.com/600x400/05a/fff"
+              alt="Kyoto Fushimi Inari"
+            />
+            <img
+              src="https://dummyimage.com/600x400/333/fff"
+              alt="Bento Kochkurs"
+            />
+            <img
+              src="https://dummyimage.com/600x400/555/fff"
+              alt="Tokyo Skyline"
+            />
+          </div>
+          <button class="img-btn img-btn-next" type="button" title="Weiter">
+            ›
+          </button>
         </div>
       </section>
     </main>

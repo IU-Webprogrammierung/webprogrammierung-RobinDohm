@@ -1,0 +1,152 @@
+/* ===== Wer sind wir – mobile first ===== */
+
+/* ===== Über uns ===== */
+.about-intro {
+  color: #333;
+}
+
+/* ---------- Personenblöcke ---------- */
+.person {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "title"
+    "img"
+    "text";
+  align-items: start;
+}
+
+.person + .person {
+  margin-top: 1.25rem;
+}
+
+.person-title {
+  grid-area: title;
+  justify-self: start;
+  text-align: left;
+}
+
+.person-title h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+  text-align: left; /* falls ein übergeordneter text-align greift */
+}
+
+.person-img {
+  grid-area: img;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+}
+.person-text {
+  grid-area: text;
+  color: #333;
+}
+
+/* ===== Banner ===== */
+.full-banner {
+  margin-block: var(--space);
+  margin-inline: calc(-1 * var(--gap));
+  position: relative;
+  display: none;
+}
+
+.full-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 60vh, 500px);
+  object-fit: cover;
+}
+
+/* ===== Unsere Geschichte ===== */
+.timeline {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  width: min(100%, 30rem);
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin: 0 0 0.85rem;
+  line-height: 1.35;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  border: 2px solid #0552b8;
+  background: #fff;
+  box-shadow: 0 0 0 3px #e8eefc; /* dezenter Ring */
+}
+
+.timeline li::after {
+  content: "";
+  position: absolute;
+  left: 0.95rem;
+  top: 1.3rem;
+  bottom: -0.85rem; /* bis zum nächsten Punkt */
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.timeline li:last-child::after {
+  display: none;
+}
+
+.timeline .small {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ===== Tablet (≥768px) ===== */
+@media (min-width: 768px) {
+  /* ===== Über uns ===== */
+  .people {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* zweispaltige Person: Bild/Text nebeneinander */
+  .person {
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-areas:
+      "title title"
+      "img   text";
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  /* Alternate Layout für .person--alt: Text/Bild vertauschen */
+  .person-alt {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas:
+      "title title"
+      "text  img";
+  }
+
+  /* ===== Banner ===== */
+  .full-banner {
+    display: block;
+  }
+}
+
+/* ===== Desktop (≥1024px) ===== */
+@media (min-width: 1024px) {
+  .person {
+    gap: 1.5rem;
+  }
+  .timeline {
+    max-width: 58rem;
+  }
+}
