@@ -84,13 +84,13 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 Diese Projektarbeit entstand durch eigenständiges Lernen aus verschiedenen offenen Quellen:
 
-- 🧾 [Markdown Guide](https://www.markdownguide.org/) – für Struktur & Syntax der README.md
-- 🎓 [Kevin Powell – YouTube](https://www.youtube.com/@KevinPowell) – moderne CSS-Techniken & Responsive Design
-- 🧠 [MDN Web Docs](https://developer.mozilla.org/de/) – offizielle Referenz zu HTML, CSS und ARIA-Rollen
-- 🔍 [W3C Validator](https://validator.w3.org/) & [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/) – Validierung und Barrierefreiheitsstandards
-- 🪶 [CSS Tricks](https://css-tricks.com/) – Inspirationen zu Layout-Mustern (Flexbox/Grid)
-- 💨 [TailwindCSS](https://tailwindcss.com/) – Dokumentation & Utility-First-Konzept für Phase 3
-- ⚛️ [Next.js](https://nextjs.org/docs) – offizielle Dokumentation für Routing, Rendering und Performance-Optimierung
+- 🧾 [Markdown Guide](https://www.markdownguide.org/) - für Struktur & Syntax der README.md
+- 🎓 [Kevin Powell - YouTube](https://www.youtube.com/@KevinPowell) - moderne CSS-Techniken & Responsive Design
+- 🧠 [MDN Web Docs](https://developer.mozilla.org/de/) - offizielle Referenz zu HTML, CSS und ARIA-Rollen
+- 🔍 [W3C Validator](https://validator.w3.org/) & [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/) - Validierung und Barrierefreiheitsstandards
+- 🪶 [CSS Tricks](https://css-tricks.com/) - Inspirationen zu Layout-Mustern (Flexbox/Grid)
+- 💨 [TailwindCSS](https://tailwindcss.com/) - Dokumentation & Utility-First-Konzept für Phase 3
+- ⚛️ [Next.js](https://nextjs.org/docs) - offizielle Dokumentation für Routing, Rendering und Performance-Optimierung
 
 ### 📘 Fachliteratur
 
@@ -98,6 +98,10 @@ Diese Projektarbeit entstand durch eigenständiges Lernen aus verschiedenen offe
 - Erlhofer, S. & Brenner, D. (2019). _Website-Konzeption und Relaunch_ (2. Aufl.). Rheinwerk Verlag. ISBN 978-3-8362-7141-7
 - Jacobsen, J. & Meyer, L. (2017). _Praxisbuch Usability und UX978-3-8362-4423-7_. Rheinwerk Verlag. ISBN 978-3-8362-4423-7
 - Erlhofer, S. (2023). _Suchmaschinen-Optimierung_(11. Aufl.). Rheinwerk Verlag. ISBN 978-3-8362-9169-9
+
+### ✨ Inspirationen
+
+- [Sticky Note von David Brandon](https://codepen.io/dillonbrady/pen/EgRoZQ) - Transform und Schatten für die Stickynote Componente
 
 ---
 
