@@ -48,9 +48,9 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 ### Phase 1 – Konzept & Grundstruktur
 
-- [ ] Alle Seiten (Skeleton) und Navigation vorhanden
-- [ ] Mindestens ein Grid- oder Flex-Layout je Seite
-- [ ] Breakpoints greifen (360 – 1920 px)
+- [] Alle Seiten (Skeleton) und Navigation vorhanden
+- [x] Mindestens ein Grid- oder Flex-Layout je Seite
+- [x] Breakpoints greifen (360 – 1920 px)
 - [ ] Barrierefreiheit nach **WCAG 2.1** & **WAI-ARIA** (Semantik, Alternativtexte, Fokusreihenfolge)
 - [x] Konzept-PDF abgelegt und im Repo versioniert
 
