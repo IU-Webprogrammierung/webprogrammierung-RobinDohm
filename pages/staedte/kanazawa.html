@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="/styles/base.css" />
     <link rel="stylesheet" href="/styles/components.css" />
-    <link rel="stylesheet" href="/styles/pages/japan.css" />
+    <link rel="stylesheet" href="/styles/pages/staedte.css" />
+
+    <script src="/scripts/carousell.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -20,7 +22,7 @@
       </nav>
     </header>
 
-    <main id="about-us">
+    <main id="city-kanazawa">
       <!-- Hero -->
       <section class="hero">
         <img
@@ -30,10 +32,169 @@
         />
         <div class="hero-text">
           <h1>Kanazawa</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
+
+      <!-- Überblick -->
+      <section class="city-overview">
+        <h2>Überblick über Kanazawa</h2>
+        <div class="city-layout">
+          <div class="city-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae in exercitationem, sed doloribus dignissimos voluptatum
+              voluptate iure suscipit labore dolorum ut est dicta sunt neque
+              esse! A voluptatum doloribus harum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+              modi sequi blanditiis asperiores, voluptatum placeat maiores
+              alias. Nisi, doloremque libero inventore obcaecati earum dolore
+              dolores necessitatibus exercitationem animi labore perspiciatis?
+            </p>
+          </div>
+
+          <!-- Kurzinfos -->
+          <aside class="city-info sticky-note sticky-note-rotate">
+            <h3>Kurzinfos</h3>
+            <ul>
+              <li><strong>Einwohner:</strong> ca. 14&nbsp;Mio.</li>
+              <li><strong>Präfektur:</strong> Tokyo-to</li>
+              <li><strong>Bekannt für:</strong> Technik, Mode, Popkultur</li>
+              <li>
+                <strong>Besonderheiten:</strong> Die größte Stadt der Welt
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Erlebnisse -->
+      <section class="city-days">
+        <h2>Unsere Erlebnisse</h2>
+
+        <article class="city-day">
+          <h3>Tag 5 - Ankunft & erster Eindruck</h3>
+          <!-- Bild für Tablet/Desktop: vor dem Text (für Umfluss) -->
+          <img
+            class="city-img city-img-desktop"
+            src="https://dummyimage.com/400x250/000/fff"
+            alt="Ankunft in Tokyo"
+            aria-hidden="true"
+          />
+
           <p>
-            Die Stadt der Samurai und Geishas. Historische Atmosphäre mit
-            Blattgold gemischt.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+            quae, repudiandae eos suscipit fugiat in maxime enim possimus eius
+            nulla inventore ducimus dignissimos at, quod facilis optio fuga
+            similique commodi!
           </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+            animi doloribus, natus fuga facilis distinctio quos? Hic corrupti,
+            non quasi laborum quia optio, placeat voluptatibus nam cumque modi
+            labore quis? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Neque, esse, eum iusto laborum iste illum officia tempora
+            quibusdam asperiores accusamus labore eveniet cum, quidem
+            praesentium fugiat! In esse tempore amet?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+            quae, repudiandae eos suscipit fugiat in maxime enim possimus eius
+            nulla inventore ducimus dignissimos at, quod facilis optio fuga
+            similique commodi! Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Repellat eveniet nisi qui obcaecati, est nobis
+            voluptatem corporis Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Provident laudantium alias fugit accusamus quas
+            doloremque a nemo aspernatur quisquam quam ratione, quaerat maxime,
+            dolores, voluptatibus praesentium vero placeat sunt aliquid.
+          </p>
+
+          <!-- Bild für Mobile: nach dem Text -->
+          <!-- ToDo: Optimierte Mobilebilder einsetzen! -->
+          <img
+            class="city-img city-img-mobile"
+            src="https://dummyimage.com/400x250/000/fff"
+            alt="Ankunft in Tokyo"
+          />
+        </article>
+
+        <article class="city-day">
+          <h3>Tag 6 - Tempel & Tradition</h3>
+          <img
+            class="city-img city-img-desktop"
+            src="https://dummyimage.com/400x250/000/fff"
+            alt="Ankunft in Tokyo"
+            aria-hidden="true"
+          />
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+            quae, repudiandae eos suscipit fugiat in maxime enim possimus eius
+            nulla inventore ducimus dignissimos at, quod facilis optio fuga
+            similique commodi!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+            animi doloribus, natus fuga facilis distinctio quos? Hic corrupti,
+            non quasi laborum quia optio, placeat voluptatibus nam cumque modi
+            labore quis? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Neque, esse, eum iusto laborum iste illum officia tempora
+            quibusdam asperiores accusamus labore eveniet cum, quidem
+            praesentium fugiat! In esse tempore amet?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+            quae, repudiandae eos suscipit fugiat in maxime enim possimus eius
+            nulla inventore ducimus dignissimos at, quod facilis optio fuga
+            similique commodi! Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Repellat eveniet nisi qui obcaecati, est nobis
+            voluptatem corporis Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Provident laudantium alias fugit accusamus quas
+            doloremque a nemo aspernatur quisquam quam ratione, quaerat maxime,
+            dolores, voluptatibus praesentium vero placeat sunt aliquid.
+          </p>
+
+          <!-- Bild für Mobile: nach dem Text -->
+          <!-- ToDo: Optimierte Mobilebilder einsetzen! -->
+          <img
+            class="city-img city-img-mobile"
+            src="https://dummyimage.com/400x250/000/fff"
+            alt="Ankunft in Tokyo"
+          />
+        </article>
+      </section>
+
+      <!-- Galerie -->
+      <section class="city-gallery">
+        <h2>Weitere Bilder aus Kanazawa</h2>
+        <div class="img-rail">
+          <button class="img-btn img-btn-prev" type="button" title="Zurück">
+            ‹
+          </button>
+          <div class="img-strip">
+            <img
+              src="https://dummyimage.com/400x250/000/fff"
+              alt="Tokyo Nachtlichter"
+            />
+            <img
+              src="https://dummyimage.com/400x250/222/fff"
+              alt="Asakusa Tempel"
+            />
+            <img
+              src="https://dummyimage.com/400x250/444/fff"
+              alt="Shibuya Crossing"
+            />
+            <img
+              src="https://dummyimage.com/400x250/666/fff"
+              alt="Tokyo Tower"
+            />
+            <img src="https://dummyimage.com/400x250/888/fff" alt="Ueno Park" />
+          </div>
+          <button class="img-btn img-btn-next" type="button" title="Weiter">
+            ›
+          </button>
         </div>
       </section>
     </main>

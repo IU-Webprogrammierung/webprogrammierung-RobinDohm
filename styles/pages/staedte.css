@@ -1,0 +1,108 @@
+/* ===== Städte – mobile first ===== */
+
+/* Überblick */
+.city-overview {
+  padding-block: var(--space);
+}
+
+.city-layout {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "text"
+    "info";
+}
+
+.city-text {
+  grid-area: text;
+  color: #333;
+}
+
+.city-info {
+  grid-area: info;
+  max-width: 18rem; /* angenehme Breite für Notizzettel */
+  margin-inline: auto; /* mittig auf Mobile */
+  text-align: left;
+}
+
+.city-info ul {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.city-info li {
+  margin-bottom: 0.25rem;
+}
+
+/* Erlebnisse */
+.city-days {
+  padding-block: var(--space);
+}
+
+/* --- Basis --- */
+.city-day {
+  margin-bottom: 2rem;
+}
+.city-img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+/* Mobile: nur das Bild nach dem Text zeigen */
+.city-img-desktop {
+  display: none;
+}
+.city-img-mobile {
+  display: block;
+}
+
+/* ===== Tablet (≥768px) ===== */
+@media (min-width: 768px) {
+  /* Überblick */
+  .city-layout {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "text info";
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  /* Erlebnisse */
+  .city-img-desktop {
+    display: block;
+  }
+  .city-img-mobile {
+    display: none;
+  }
+
+  .city-day {
+    display: block;
+  } /* kein Grid/Flex -> normaler Fluss */
+  .city-day .city-img-desktop {
+    float: left; /* Standard: links */
+    width: clamp(260px, 42%, 380px);
+    margin: 0.25rem 1rem 0.75rem 0;
+  }
+
+  /* jedes 2. Erlebnis: Bild rechts */
+  .city-day:nth-of-type(even) .city-img-desktop {
+    float: right;
+    margin: 0.25rem 0 0.75rem 1rem;
+  }
+  /* Clearfix */
+  .city-day::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .city-day {
+    gap: 1.25rem;
+  }
+}
