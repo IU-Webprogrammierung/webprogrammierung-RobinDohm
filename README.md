@@ -6,11 +6,11 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 ## 🧭 Projektphasen
 
-| Phase       | Ziel                                                       | Status       |
-| :---------- | :--------------------------------------------------------- | :----------- |
-| **Phase 1** | Konzept & responsive Grundstruktur _(mind. 2 Breakpoints)_ | 🚧 in Arbeit |
-| **Phase 2** | Feinschliff, Inhalte & Medienintegration                   | ⏳ geplant   |
-| **Phase 3** | Portierung nach **Next.js** inkl. Tailwind & SEO           | 🔮 geplant   |
+| Phase       | Ziel                                                       | Status           |
+| :---------- | :--------------------------------------------------------- | :--------------- |
+| **Phase 1** | Konzept & responsive Grundstruktur _(mind. 2 Breakpoints)_ | ✅ abgeschlossen |
+| **Phase 2** | Feinschliff, Inhalte & Medienintegration                   | 🚧 in Arbeit     |
+| **Phase 3** | Portierung nach **Next.js** inkl. Tailwind & SEO           | ⏳ geplant       |
 
 ---
 
@@ -49,9 +49,8 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 ### Phase 1 – Konzept & Grundstruktur
 
 - [] Alle Seiten (Skeleton) und Navigation vorhanden
-- [x] Mindestens ein Grid- oder Flex-Layout je Seite
+- [x] Mindestens ein Grid- oder Flex-Layout je Seite _(Impressum/Datenschutz/Cookies ausgenommen)_
 - [x] Breakpoints greifen (360 – 1920 px)
-- [ ] Barrierefreiheit nach **WCAG 2.1** & **WAI-ARIA** (Semantik, Alternativtexte, Fokusreihenfolge)
 - [x] Konzept-PDF abgelegt und im Repo versioniert
 
 ---
@@ -62,6 +61,7 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 - [ ] Medien (Bilder, Galerien, Timeline) nach Konzept eingebunden
 - [ ] Responsives Design auf allen Breakpoints getestet (360 – 1920 px)
 - [ ] Erweiterte Gestaltung mit typografischem Feinschliff und Farbschema
+- [ ] Barrierefreiheit nach **WCAG 2.1** & **WAI-ARIA** (Semantik, Alternativtexte, Fokusreihenfolge)
 - [ ] Validierung (HTML & CSS) über W3C Validator erfolgreich
 - [ ] Accessibility-Check (WCAG 2.1 AA) bestanden
 - [ ] Dokumentation (README & Kommentierung im Code) aktualisiert

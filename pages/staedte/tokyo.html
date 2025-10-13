@@ -9,18 +9,82 @@
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/pages/staedte.css" />
 
+    <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/carousell.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <div class="brand"><a class="logo" href="/pages/index.html">Logo</a></div>
-      <nav class="main-nav">
+
+      <!-- Desktop/Tablet-Navigation (ab 768px sichtbar) -->
+      <nav class="main-nav" aria-label="Hauptnavigation">
         <a href="/pages/index.html">Start</a>
         <a href="/pages/japan.html">Japan</a>
-        <a href="/pages/staedte/index.html" class="active">Städte</a>
+
+        <!-- Dropdown ohne eigene Städte-Seite -->
+        <div class="nav-item has-dropdown">
+          <button
+            class="nav-link nav-trigger active"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Städte
+          </button>
+          <ul class="nav-dropdown" aria-label="Städte">
+            <li>
+              <a href="/pages/staedte/tokyo.html" class="active">Tokyo</a>
+            </li>
+            <li><a href="/pages/staedte/kanazawa.html">Kanazawa</a></li>
+            <li><a href="/pages/staedte/kyoto.html">Kyoto</a></li>
+            <li><a href="/pages/staedte/hiroshima.html">Hiroshima</a></li>
+            <li><a href="/pages/staedte/osaka.html">Osaka</a></li>
+          </ul>
+        </div>
+
         <a href="/pages/wer-sind-wir.html">Wer sind wir</a>
       </nav>
+
+      <!-- Burger (nur Mobile sichtbar) -->
+      <button
+        class="nav-toggle"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Menü öffnen"
+      >
+        ☰
+      </button>
     </header>
+
+    <!-- Mobile Overlay-Menü -->
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <div class="mobile-menu-bar">
+        <a class="logo" href="/pages/index.html">Logo</a>
+        <button class="nav-close" aria-label="Menü schließen">×</button>
+      </div>
+
+      <nav class="mobile-menu-nav" aria-label="Mobiles Menü">
+        <ul class="mobile-menu-list">
+          <li><a href="/pages/index.html">Start</a></li>
+          <li><a href="/pages/japan.html">Japan</a></li>
+
+          <li class="mobile-group">
+            <span class="mobile-group-label">Städte</span>
+            <ul class="mobile-sub">
+              <li>
+                <a href="/pages/staedte/tokyo.html" class="active">Tokyo</a>
+              </li>
+              <li><a href="/pages/staedte/kanazawa.html">Kanazawa</a></li>
+              <li><a href="/pages/staedte/kyoto.html">Kyoto</a></li>
+              <li><a href="/pages/staedte/hiroshima.html">Hiroshima</a></li>
+              <li><a href="/pages/staedte/osaka.html">Osaka</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/pages/wer-sind-wir.html">Wer sind wir</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <main id="city-tokyo">
       <!-- Hero -->

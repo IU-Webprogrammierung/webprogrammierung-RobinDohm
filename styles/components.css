@@ -1,6 +1,6 @@
 /* === Layout (mobile-first → Tablet → Desktop) === */
 
-/* Header */
+/* Header (Nav) */
 .site-header {
   padding-block: 0.75rem;
   display: grid;
@@ -21,9 +21,161 @@
   color: #1576f5;
 }
 
-.main-nav a.active {
+.active {
   font-weight: bold;
   color: #0552b8;
+}
+
+/* === Desktop/Tablet: Dropdown === */
+.main-nav {
+  position: relative;
+  gap: 0.75rem;
+}
+.nav-item {
+  position: relative;
+}
+.nav-trigger {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.nav-trigger:hover {
+  color: #1576f5;
+}
+.has-dropdown > .nav-trigger {
+  padding-right: 1.25rem;
+  position: relative;
+}
+.has-dropdown > .nav-trigger::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-45%);
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  min-width: 12rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 0.35rem;
+  z-index: 50;
+}
+.nav-dropdown li {
+  list-style: none;
+}
+.nav-dropdown a {
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+.nav-dropdown a:hover {
+  background: #f3f4f6;
+}
+.nav-item:hover > .nav-dropdown,
+.nav-item:focus-within > .nav-dropdown {
+  display: block;
+}
+
+/* === Mobile: Overlay-Menü === */
+.nav-toggle {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  } /* Burger nur auf Mobile */
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.mobile-menu-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.75rem var(--gap);
+  border-bottom: 1px solid var(--line);
+}
+.nav-close {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.mobile-menu-nav {
+  overflow: auto;
+}
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: clamp(1.25rem, 5vw, 2rem);
+  display: grid;
+  gap: clamp(0.75rem, 2.5vh, 1rem);
+  text-align: center;
+}
+.mobile-menu-list > li > a {
+  text-decoration: none;
+  font: 700 clamp(1.25rem, 5.5vw, 1.75rem) var(--font);
+}
+.mobile-group-label {
+  display: block;
+  font: 700 clamp(1.1rem, 5vw, 1.5rem) var(--font);
+  margin-bottom: 0.75rem;
+}
+.mobile-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  margin-bottom: 0.5rem;
+  gap: 0.75rem;
+}
+.mobile-sub a {
+  text-decoration: none;
+  font: 500 clamp(0.95rem, 4.2vw, 1.05rem) var(--font);
+}
+
+/* Body fixieren, wenn Menü offen */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* Hero */
@@ -181,6 +333,10 @@
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+  }
+
+  .mobile-menu {
+    display: none !important;
   }
 
   /* Hero */
