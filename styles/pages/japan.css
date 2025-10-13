@@ -105,6 +105,50 @@
   border-radius: 0.25rem;
 }
 
+/* ===== Naturgewalten & Herausforderungen ===== */
+.jp-risks {
+  padding-block: var(--space);
+}
+.jp-risks p {
+  color: #333;
+}
+
+.jp-risks-block {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Charts – Platzhalter */
+.jp-chart {
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
+.jp-chart-bar {
+  height: 220px;
+  padding: 0.75rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f3f4f6,
+    #f3f4f6 10px,
+    #e5e7eb 10px,
+    #e5e7eb 20px
+  );
+}
+
+.jp-chart-line {
+  height: 220px;
+  position: relative;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f3f4f6,
+    #f3f4f6 10px,
+    #e5e7eb 10px,
+    #e5e7eb 20px
+  );
+}
+
 /* ===== Tablet (≥768px) ===== */
 @media (min-width: 768px) {
   /* ===== Geografie & Natur ===== */
@@ -167,6 +211,12 @@
     grid-column: 1 / span 2; /* Z3, Sp2-3 */
     grid-row: 3;
   }
+
+  /* ===== Naturgewalten & Herausforderungen ===== */
+  .jp-chart-bar,
+  .jp-chart-line {
+    height: 260px;
+  }
 }
 
 /* ===== Desktop (≥1024px) ===== */
@@ -225,5 +275,32 @@
     grid-column: 9 / span 4; /* 9–12 */
     grid-row: 3;
     max-height: 300px;
+  }
+
+  /* ===== Naturgewalten & Herausforderungen ===== */
+  .jp-risks-block-a {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+    gap: 1.25rem;
+  }
+  /* Block B: Chart links, Text rechts */
+  .jp-risks-block-b {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .jp-risks-block-b .jp-chart {
+    grid-column: 1;
+    grid-row: 1;
+  } /* links */
+  .jp-risks-block-b .jp-risks-text {
+    grid-column: 2;
+    grid-row: 1;
+  } /* rechts */
+
+  .jp-chart-bar,
+  .jp-chart-line {
+    height: 300px;
   }
 }
