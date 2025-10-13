@@ -48,7 +48,7 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 ### Phase 1 – Konzept & Grundstruktur
 
-- [] Alle Seiten (Skeleton) und Navigation vorhanden
+- [x] Alle Seiten (Skeleton) und Navigation vorhanden
 - [x] Mindestens ein Grid- oder Flex-Layout je Seite _(Impressum/Datenschutz/Cookies ausgenommen)_
 - [x] Breakpoints greifen (360 – 1920 px)
 - [x] Konzept-PDF abgelegt und im Repo versioniert
