@@ -112,6 +112,24 @@
   scroll-snap-align: start;
 }
 
+/* Stickynote */
+.sticky-note {
+  background: #fde68a;
+  color: #333;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+  font: 600 1.5rem var(--handwritten-font);
+  text-align: center;
+}
+
+.sticky-note-rotate {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -148,6 +166,11 @@
   .hero-text h1 {
     font-size: 1.3rem;
     text-align: left;
+  }
+
+  /* Stickynote */
+  .sticky-note {
+    font-size: 1.2rem;
   }
 }
 
