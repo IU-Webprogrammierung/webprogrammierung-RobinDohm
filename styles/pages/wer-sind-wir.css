@@ -2,7 +2,7 @@
 
 /* ===== Über uns ===== */
 .about-intro {
-  color: #333;
+  color: var(--text);
 }
 
 /* ---------- Personenblöcke ---------- */
@@ -42,7 +42,7 @@
 }
 .person-text {
   grid-area: text;
-  color: #333;
+  color: var(--text);
 }
 
 /* ===== Banner ===== */

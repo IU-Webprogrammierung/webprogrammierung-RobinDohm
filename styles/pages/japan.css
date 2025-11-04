@@ -37,7 +37,7 @@
 }
 
 .jp-geo-text p {
-  color: #333;
+  color: var(--text);
 }
 
 /* Facts-Karte */
@@ -59,7 +59,7 @@
 }
 
 .jp-culture p {
-  color: #333;
+  color: var(--text);
 }
 
 /* ===== Kulinarik ===== */
@@ -71,7 +71,7 @@
 }
 .jp-food p {
   margin: 0 0 0.6rem;
-  color: #333;
+  color: var(--text);
 }
 
 .jp-food-grid {
@@ -110,7 +110,7 @@
   padding-block: var(--space);
 }
 .jp-risks p {
-  color: #333;
+  color: var(--text);
 }
 
 .jp-risks-block {

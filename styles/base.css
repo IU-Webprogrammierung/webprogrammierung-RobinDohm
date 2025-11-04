@@ -7,8 +7,20 @@
   --space: clamp(1.25rem, 3vw, 2rem);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial,
     sans-serif;
-  --line: #e5e7eb;
   --handwritten-font: "Caveat", cursive;
+  /* Theme: Japan – Light */
+  --bg: #6bb3ea; /* background */
+  --surface: #ffffff; /* maincard surface */
+  --muted: #f4f8ff; /* subtle header/footer */
+  --text: #1a1a1a; /* base text */
+  --primary: #c81d25;
+  --primary-hover: #a11219;
+  --accent: #0f3f3a;
+  --line: #dbe7f3;
+  --focus: #0b5fff; /* accessible focus ring */
+  --radius: 12px; /* unified corner radius */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -20,8 +32,8 @@ html {
 }
 body {
   margin: 0;
-  color: #111;
-  background: #fff;
+  color: var(--text);
+  background: var(--bg);
 }
 
 img {
@@ -34,6 +46,15 @@ a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.12em;
+}
+
+/* Accessible, themed links only in main content */
+main a {
+  color: var(--primary);
+}
+main a:hover {
+  color: var(--primary-hover);
 }
 
 h1 {
@@ -46,22 +67,56 @@ h2 {
   line-height: 1.25;
 }
 
+/* Focus visibility for keyboard users (WCAG 2.1) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 header,
 main,
 footer {
   margin-inline: auto;
   max-width: var(--maxw);
   padding-inline: var(--gap);
-  background: #f7f7f7;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-block: clamp(0.75rem, 2vh, 1.25rem);
 }
 header {
-  background: #d1d1d1;
+  background: var(--muted);
+}
+
+/* interactive transitions */
+a,
+button,
+input,
+select,
+textarea {
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
 }
 section {
   padding-block: var(--space);
 }
 
-/* Mobile + Tablet: Überschriften mittig */
+/* Mobile + Tablet: heading center */
 h1,
 h2 {
   text-align: center;
