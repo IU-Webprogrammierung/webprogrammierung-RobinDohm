@@ -249,6 +249,10 @@ body.menu-open {
   margin-block: var(--space);
   /* negiert das Padding von header/main/footer (aus base.css) nur für den Hero */
   margin: 0 calc(-1 * var(--gap)) 0 calc(-1 * var(--gap));
+  /* verhindert overflow bei abrundung */
+  overflow: hidden;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 .hero-text {
