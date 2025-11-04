@@ -162,15 +162,6 @@ textarea {
     border-color 0.2s ease;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  a,
-  button,
-  input,
-  select,
-  textarea {
-    transition: none;
-  }
-}
 section {
   padding-block: var(--space);
 }
@@ -179,6 +170,99 @@ section {
 h1,
 h2 {
   text-align: center;
+}
+
+/* === Sakura Branches (Header) === */
+.sakura-images {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.sakura-bg {
+  position: absolute;
+  top: 0;
+  width: min(46vw, 720px);
+  height: min(40vh, 380px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
+}
+.sakura-bg.left {
+  left: 0;
+  transform: translate(-8%, -12%);
+  background-image: url("/public/img/background_left.png");
+}
+.sakura-bg.right {
+  right: 0;
+  transform: translate(8%, -12%);
+  background-image: url("/public/img/background_right.png");
+}
+/* === Sakura Effekt (fallend) === */
+.sakura-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.sakura-petal {
+  position: absolute;
+  left: var(--x, 50vw);
+  top: -10vh;
+  width: var(--size, 18px);
+  height: var(--size, 18px);
+  background: transparent;
+  border: 0;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  opacity: 0.95;
+  animation: sakura-fall var(--dur, 12s) linear var(--delay, 0s) infinite,
+    sakura-sway calc(var(--dur, 12s) * 0.5) ease-in-out var(--delay, 0s)
+      infinite alternate;
+}
+.sakura-petal > .petal-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: petal-spin var(--spinDur, 7s) linear infinite;
+}
+@keyframes sakura-fall {
+  0% {
+    transform: translate(-50%, -50%) translateY(-10vh) rotate(var(--rot, 0deg));
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(110vh) rotate(var(--rot, 0deg));
+  }
+}
+@keyframes sakura-sway {
+  0% {
+    margin-left: -10px;
+  }
+  100% {
+    margin-left: 10px;
+  }
+}
+@keyframes petal-spin {
+  0% {
+    transform: rotate(0deg) scale(0.9);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.9);
+  }
+}
+
+/* === Tablet (≥ 640px) === */
+@media (max-width: 640px) {
+  .sakura-bg {
+    width: 62vw;
+    height: 28vh;
+    opacity: 0.75;
+  }
 }
 
 /* === Desktop (≥1024px) === */
@@ -198,5 +282,24 @@ h2 {
   }
   h2::after {
     margin-inline: 0;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
+
+  .sakura-layer,
+  .sakura-images {
+    display: none;
+  }
+  .sakura-petal > .petal-inner {
+    animation: none;
   }
 }
