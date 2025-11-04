@@ -100,7 +100,7 @@
         </div>
         <img
           class="index-hero-image"
-          src="https://dummyimage.com/400x200/000/fff"
+          src="../public/img/index_01.jpg"
           alt="Titelbild Platzhalter"
         />
         <!-- Tablet/Desktop: Bild kann breiter/oben dargestellt werden -->
@@ -128,7 +128,7 @@
         </div>
         <img
           class="why-image"
-          src="https://dummyimage.com/400x200/000/fff"
+          src="../public/img/index_02.jpg"
           alt="Whybild Platzhalter"
         />
       </section>
@@ -158,7 +158,7 @@
         </div>
         <img
           class="language-image"
-          src="https://dummyimage.com/400x200/000/fff"
+          src="../public/img/index_03.jpg"
           alt="Sprach-Illustration Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild rechts -->
@@ -204,7 +204,7 @@
         </div>
         <img
           class="preparation-image"
-          src="https://dummyimage.com/400x200/000/fff"
+          src="../public/img/index_04.jpg"
           alt="Vorbereitung Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild links -->
@@ -272,11 +272,58 @@
             </li>
           </ol>
         </div>
-        <img
-          class="itinerary-image"
-          src="https://dummyimage.com/200x400/000/fff"
-          alt="Karte Platzhalter"
-        />
+        <div
+          class="itinerary-image itinerary-map"
+          aria-label="Japan-Karte mit markierten Städten"
+        >
+          <img src="../public/svg/mapofjapan.svg" alt="Karte von Japan" />
+          <!-- Interaktive Städte-Pins -->
+          <a
+            class="map-pin"
+            href="/pages/staedte/tokyo.html"
+            style="--x: 65%; --y: 68%"
+            aria-label="Tokyo"
+            title="Tokyo"
+          >
+            <span class="visually-hidden">Tokyo</span>
+          </a>
+          <a
+            class="map-pin"
+            href="/pages/staedte/kanazawa.html"
+            style="--x: 46%; --y: 62%"
+            aria-label="Kanazawa"
+            title="Kanazawa"
+          >
+            <span class="visually-hidden">Kanazawa</span>
+          </a>
+          <a
+            class="map-pin"
+            href="/pages/staedte/kyoto.html"
+            style="--x: 42%; --y: 70%"
+            aria-label="Kyoto"
+            title="Kyoto"
+          >
+            <span class="visually-hidden">Kyoto</span>
+          </a>
+          <a
+            class="map-pin"
+            href="/pages/staedte/osaka.html"
+            style="--x: 40%; --y: 73%"
+            aria-label="Osaka"
+            title="Osaka"
+          >
+            <span class="visually-hidden">Osaka</span>
+          </a>
+          <a
+            class="map-pin"
+            href="/pages/staedte/hiroshima.html"
+            style="--x: 22%; --y: 75%"
+            aria-label="Hiroshima"
+            title="Hiroshima"
+          >
+            <span class="visually-hidden">Hiroshima</span>
+          </a>
+        </div>
         <!-- Tablet/Desktop: Karte rechts als große Spalte -->
       </section>
     </main>
