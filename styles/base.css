@@ -151,6 +151,7 @@ footer {
 }
 header {
   background: var(--muted);
+  z-index: 10;
 }
 
 a,
