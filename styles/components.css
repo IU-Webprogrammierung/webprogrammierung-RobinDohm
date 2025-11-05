@@ -9,6 +9,18 @@
   height: 65px;
 }
 
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
 .main-nav {
   display: none;
 }

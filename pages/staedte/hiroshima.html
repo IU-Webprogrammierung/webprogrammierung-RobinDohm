@@ -12,10 +12,30 @@
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/carousell.js" defer></script>
     <script src="/scripts/sakura.js" defer></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/public/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/public/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="JPBlog" />
+    <link rel="manifest" href="/public/favicon/site.webmanifest" />
   </head>
   <body>
     <header class="site-header">
-      <div class="brand"><a class="logo" href="/pages/index.html">Logo</a></div>
+      <div class="brand">
+        <a class="logo" href="/pages/index.html"
+          ><img src="/public/img/logo.png" alt="Startseite"
+        /></a>
+      </div>
 
       <!-- Desktop/Tablet-Navigation (ab 768px sichtbar) -->
       <nav class="main-nav" aria-label="Hauptnavigation">
@@ -62,7 +82,9 @@
     <!-- Mobile Overlay-Menü -->
     <div id="mobile-menu" class="mobile-menu" hidden>
       <div class="mobile-menu-bar">
-        <a class="logo" href="/pages/index.html">Logo</a>
+        <a class="logo" href="/pages/index.html"
+          ><img src="/public/img/logo.png" alt="Startseite"
+        /></a>
         <button class="nav-close" aria-label="Menü schließen">×</button>
       </div>
 
