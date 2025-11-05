@@ -40,6 +40,12 @@
   background: var(--muted);
   box-shadow: inset 0 -2px 0 var(--primary);
 }
+/* Markiere Eltern-Trigger als aktiv, wenn ein Unterlink aktiv ist */
+.main-nav .nav-item.has-dropdown:has(.nav-dropdown a.active) > .nav-trigger {
+  color: var(--primary);
+  background: var(--muted);
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
 
 /* === Desktop/Tablet: Dropdown === */
 .main-nav {
@@ -58,10 +64,14 @@
   appearance: none;
   border: 0;
   background: transparent;
-  padding: 0;
+  padding: 0.4rem 0.7rem;
   cursor: pointer;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.2;
 }
 .nav-trigger:hover {
   color: var(--primary);
@@ -70,14 +80,22 @@
 .has-dropdown > .nav-trigger {
   padding-right: 1.25rem;
   position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.2;
 }
 .has-dropdown > .nav-trigger::after {
-  content: "▾";
+  content: "";
   position: absolute;
-  right: 0;
+  right: 0.35rem;
   top: 50%;
-  transform: translateY(-45%);
-  font-size: 0.75rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
   opacity: 0.7;
 }
 .nav-dropdown {
@@ -98,6 +116,7 @@
 }
 .nav-dropdown a {
   display: block;
+  width: 100%;
   text-decoration: none;
   padding: 0.5rem 0.65rem;
   border-radius: 0.25rem;
@@ -118,29 +137,41 @@
 .nav-item:focus-within > .nav-trigger {
   background: var(--muted);
   color: var(--primary);
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.2;
 }
 
-.main-nav a.active {
-  color: var(--primary);
-  background: var(--muted);
-  box-shadow: inset 0 -2px 0 var(--primary);
+.main-nav a,
+.nav-trigger {
+  font: inherit;
 }
-.main-nav {
-  gap: 0.9rem;
+.main-nav > a {
+  display: inline-flex;
+  align-items: center;
 }
+.nav-trigger {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.has-dropdown > .nav-trigger {
+  padding-right: 1.6rem;
+}
+
 .has-dropdown > .nav-trigger::after {
-  content: "▾";
-}
-.nav-dropdown a {
-  color: var(--text);
-}
-.nav-dropdown a:hover {
-  color: var(--primary);
-}
-.nav-item:hover > .nav-trigger,
-.nav-item:focus-within > .nav-trigger {
-  background: var(--muted);
-  color: var(--primary);
+  content: "";
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: 0.7;
 }
 
 /* === Mobile: Overlay-Menü === */
@@ -231,7 +262,7 @@
 .mobile-sub {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.4rem 0.7rem;
   display: grid;
   margin-bottom: 0.5rem;
   gap: 0.75rem;
@@ -435,6 +466,7 @@ body.menu-open {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .mobile-menu {
