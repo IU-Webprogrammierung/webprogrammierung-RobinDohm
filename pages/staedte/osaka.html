@@ -6,8 +6,22 @@
     <title>Osaka - Japanreisebericht</title>
 
     <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/components.css" />
-    <link rel="stylesheet" href="/styles/pages/staedte.css" />
+    <link
+      rel="preload"
+      href="/styles/components.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/styles/components.css" /></noscript>
+    <link
+      rel="preload"
+      href="/styles/pages/staedte.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/styles/pages/staedte.css"
+    /></noscript>
 
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/carousell.js" defer></script>
@@ -28,12 +42,14 @@
     />
     <meta name="apple-mobile-web-app-title" content="JPBlog" />
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
+    <link rel="preload" as="image" href="/public/img/background_left.webp" />
+    <link rel="preload" as="image" href="/public/img/background_right.webp" />
   </head>
   <body>
     <header class="site-header">
       <div class="brand">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
       </div>
 
@@ -81,7 +97,7 @@
     <div id="mobile-menu" class="mobile-menu" hidden>
       <div class="mobile-menu-bar">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
         <button class="nav-close" aria-label="Menü schließen">×</button>
       </div>

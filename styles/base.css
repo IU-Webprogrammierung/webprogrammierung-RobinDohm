@@ -1,6 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap");
+/* Local webfonts */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../public/fonts/Noto_Sans/NotoSans-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../public/fonts/Noto_Sans/NotoSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url("../public/fonts/Caveat/Caveat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../public/fonts/Noto_Serif/NotoSerif-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../public/fonts/Noto_Serif/NotoSerif-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Yuji Boku";
+  src: url("../public/fonts/Yuji_Boku/YujiBoku-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* === Base (mobile-first) === */
 :root {
@@ -11,8 +57,7 @@
     sans-serif;
   --font-display: "Noto Serif", Georgia, Cambria, "Times New Roman", Times,
     serif;
-  --font-jp-accent: "Yuji Boku", "Hiragino Mincho ProN", "Yu Mincho",
-    "MS Mincho", serif;
+  --font-jp-accent: "Yuji Boku", serif;
   --handwritten-font: "Caveat", cursive;
   /* Theme: Japan – Light */
   --bg: #6bb3ea; /* background */
@@ -21,7 +66,7 @@
   --text: #1a1a1a; /* base text */
   --primary: #c81d25;
   --primary-hover: #a11219;
-  --accent: #0f3f3a;
+  --accent: #c81d2540;
   --line: #dbe7f3;
   --focus: #0b5fff; /* accessible focus ring */
   --radius: 12px; /* unified corner radius */
@@ -97,7 +142,7 @@ h2::after {
   width: 3ch;
   height: 3px;
   margin-top: 0.35rem;
-  background: rgba(200, 29, 37, 0.25);
+  background: var(--accent);
   border-radius: 2px;
   margin-inline: auto;
 }
@@ -184,7 +229,7 @@ h2 {
   position: absolute;
   top: 0;
   width: min(46vw, 720px);
-  height: min(40vh, 380px);
+  height: min(40vh, 343px);
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.9;
@@ -192,12 +237,12 @@ h2 {
 .sakura-bg.left {
   left: 0;
   transform: translate(-8%, -12%);
-  background-image: url("/public/img/background_left.png");
+  background-image: url("/public/img/background_left.avif");
 }
 .sakura-bg.right {
   right: 0;
   transform: translate(8%, -12%);
-  background-image: url("/public/img/background_right.png");
+  background-image: url("/public/img/background_right.avif");
 }
 /* === Sakura Effekt (fallend) === */
 .sakura-layer {

@@ -6,8 +6,22 @@
     <title>Start - Japan Reisebericht</title>
 
     <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/components.css" />
-    <link rel="stylesheet" href="/styles/pages/index.css" />
+    <link
+      rel="preload"
+      href="/styles/components.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/styles/components.css" /></noscript>
+    <link
+      rel="preload"
+      href="/styles/pages/index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/styles/pages/index.css"
+    /></noscript>
 
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/sakura.js" defer></script>
@@ -27,12 +41,14 @@
     />
     <meta name="apple-mobile-web-app-title" content="JPBlog" />
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
+    <link rel="preload" as="image" href="/public/img/background_left.webp" />
+    <link rel="preload" as="image" href="/public/img/background_right.webp" />
   </head>
   <body>
     <header class="site-header">
       <div class="brand">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
       </div>
 
@@ -78,7 +94,7 @@
     <div id="mobile-menu" class="mobile-menu" hidden>
       <div class="mobile-menu-bar">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
         <button class="nav-close" aria-label="Menü schließen">×</button>
       </div>
@@ -126,7 +142,7 @@
         </div>
         <img
           class="index-hero-image"
-          src="../public/img/index_01.jpg"
+          src="/public/img/main/hero.jpg"
           alt="Titelbild Platzhalter"
         />
         <!-- Tablet/Desktop: Bild kann breiter/oben dargestellt werden -->
@@ -154,7 +170,7 @@
         </div>
         <img
           class="why-image"
-          src="../public/img/index_02.jpg"
+          src="/public/img/main/why.jpg"
           alt="Whybild Platzhalter"
         />
       </section>
@@ -184,7 +200,7 @@
         </div>
         <img
           class="language-image"
-          src="../public/img/index_03.jpg"
+          src="/public/img/main/language.jpg"
           alt="Sprach-Illustration Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild rechts -->
@@ -230,7 +246,7 @@
         </div>
         <img
           class="preparation-image"
-          src="../public/img/index_04.jpg"
+          src="/public/img/main/preperation.jpg"
           alt="Vorbereitung Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild links -->

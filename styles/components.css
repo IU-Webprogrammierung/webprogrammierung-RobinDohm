@@ -77,27 +77,7 @@
   color: var(--primary);
   background: var(--muted);
 }
-.has-dropdown > .nav-trigger {
-  padding-right: 1.25rem;
-  position: relative;
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-  line-height: 1.2;
-}
-.has-dropdown > .nav-trigger::after {
-  content: "";
-  position: absolute;
-  right: 0.35rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid currentColor;
-  opacity: 0.7;
-}
+
 .nav-dropdown {
   display: none;
   position: absolute;

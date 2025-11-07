@@ -6,8 +6,22 @@
     <title>Wer sind wir - Japanreisebericht</title>
 
     <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/components.css" />
-    <link rel="stylesheet" href="/styles/pages/wer-sind-wir.css" />
+    <link
+      rel="preload"
+      href="/styles/components.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/styles/components.css" /></noscript>
+    <link
+      rel="preload"
+      href="/styles/pages/wer-sind-wir.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/styles/pages/wer-sind-wir.css"
+    /></noscript>
 
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/carousell.js" defer></script>
@@ -28,12 +42,22 @@
     />
     <meta name="apple-mobile-web-app-title" content="JPBlog" />
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
+
+    <!-- LPC Push für Hero  -->
+    <link
+      rel="preload"
+      as="image"
+      href="/public/img/wersindwir/hero.avif"
+      fetchpriority="high"
+    />
+    <link rel="prefetch" href="/public/img/background_left.webp" />
+    <link rel="prefetch" href="/public/img/background_right.webp" />
   </head>
   <body>
     <header class="site-header">
       <div class="brand">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
       </div>
 
@@ -79,9 +103,9 @@
     <div id="mobile-menu" class="mobile-menu" hidden>
       <div class="mobile-menu-bar">
         <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.png" alt="Startseite"
+          ><img src="/public/img/logo.avif" alt="Startseite"
         /></a>
-        <button class="nav-close" aria-label="Menü schließen">×</button>
+        <button class="nav-close" aria-label="Menü schließen">X</button>
       </div>
 
       <nav class="mobile-menu-nav" aria-label="Mobiles Menü">
@@ -112,8 +136,13 @@
       <section class="hero">
         <img
           class="hero-img"
-          src="/public/img/wersindwir/hero.jpg"
-          alt="Bannerbild About"
+          src="/public/img/wersindwir/hero.avif"
+          alt="Wer-sind-wir Hero"
+          width="1150"
+          height="359"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
         />
         <div class="hero-text">
           <h1>Wer wir sind</h1>
@@ -142,8 +171,8 @@
             <h3 class="person-title">Robin</h3>
             <img
               class="person-img"
-              src="/public/img/wersindwir/robin.jpg"
-              alt="Portrait von Robin"
+              src="/public/img/wersindwir/robin.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
             <div class="person-text">
               <p>
@@ -190,8 +219,8 @@
             </div>
             <img
               class="person-img"
-              src="/public/img/wersindwir/jessi.jpg"
-              alt="Portrait von Jessi"
+              src="/public/img/wersindwir/jessi.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
           </article>
         </div>
@@ -199,7 +228,10 @@
 
       <!-- Banner -->
       <section class="full-banner" aria-label="Banner">
-        <img src="/public/img/wersindwir/banner.jpg" alt="Zwischenbanner" />
+        <img
+          src="/public/img/wersindwir/banner.avif"
+          alt="Robin und Jessi halten Händchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
+        />
       </section>
 
       <!-- Unsere Geschichte (Timeline) -->
@@ -263,24 +295,36 @@
           </button>
           <div class="img-strip">
             <img
-              src="https://dummyimage.com/600x400/0a0/fff"
-              alt="Shinkansen Moment"
+              src="/public/img/wersindwir/moments_01.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
             <img
-              src="https://dummyimage.com/600x400/07a/fff"
-              alt="Izakaya Abend in Osaka"
+              src="/public/img/wersindwir/moments_02.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
             <img
-              src="https://dummyimage.com/600x400/05a/fff"
-              alt="Kyoto Fushimi Inari"
+              src="/public/img/wersindwir/moments_03.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
             <img
-              src="https://dummyimage.com/600x400/333/fff"
-              alt="Bento Kochkurs"
+              src="/public/img/wersindwir/moments_04.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
             <img
-              src="https://dummyimage.com/600x400/555/fff"
-              alt="Tokyo Skyline"
+              src="/public/img/wersindwir/moments_05.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
+            />
+            <img
+              src="/public/img/wersindwir/moments_06.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
+            />
+            <img
+              src="/public/img/wersindwir/moments_07.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
+            />
+            <img
+              src="/public/img/wersindwir/moments_08.avif"
+              alt="Robin und Jessi halten H�ndchen und blicken aufs Meer vor einer sonnigen K�stenlandschaft"
             />
           </div>
           <button class="img-btn img-btn-next" type="button" title="Weiter">
