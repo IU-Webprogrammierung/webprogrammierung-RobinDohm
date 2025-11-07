@@ -18,7 +18,7 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 - 🏠 **Start** → `/pages/index.html`
 - 🗻 **Japan** → `/pages/japan.html`
-- 🏙️ **Städte** → `/pages/staedte/*` _(Tokyo, Kanazawa, Kyoto, Hiroshima, Osaka)_
+- 🏙️ **Städte** → `/pages/staedte/*.html` _(Tokyo, Kanazawa, Kyoto, Hiroshima, Osaka)_
 - 👥 **Wer sind wir** → `/pages/wer-sind-wir.html`
 
 ---
