@@ -124,7 +124,7 @@
   border-radius: 0.25rem;
   background: #fff;
   height: 220px;
-  padding: 0.75rem;
+  width: 100%;
 }
 
 /* ===== Tablet (≥768px) ===== */
@@ -280,4 +280,19 @@
   .jp-chart-line {
     height: 300px;
   }
+}
+
+/* Ensure canvas follows container size on resize */
+.jp-chart > canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Grid children must be allowed to shrink to avoid overflow in CSS Grid */
+.jp-geo > *,
+.jp-risks-block > *,
+.jp-risks-block-a > *,
+.jp-risks-block-b > * {
+  min-width: 0;
 }
