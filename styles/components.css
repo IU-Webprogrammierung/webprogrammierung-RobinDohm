@@ -330,7 +330,7 @@ body.menu-open {
   flex: 1 1 auto;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 70%;
+  grid-auto-columns: 40%;
   gap: 0.5rem;
   overflow-x: auto;
   overflow-y: hidden;
@@ -422,33 +422,13 @@ body.menu-open {
 @media (min-width: 768px) {
   /* Header */
   .nav-toggle {
-    appearance: none;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    border-radius: 999px;
-    width: 36px;
-    height: 36px;
-    font-size: 0;
-    line-height: 1;
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-    position: relative;
-    z-index: 200;
-    pointer-events: auto;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: none !important;
   }
-  /* Burger nur auf Mobile */
-
-  .main-nav {
-    display: flex !important;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
   .mobile-menu {
     display: none !important;
+  }
+  .main-nav {
+    display: flex !important;
   }
 
   /* Hero */
@@ -491,10 +471,11 @@ body.menu-open {
   }
 }
 
-/* SVG-Icons f�r Burger/X via CSS-Masken */
+/* SVG-Icons für Burger/X via CSS-Masken */
 .nav-toggle::before {
   content: "";
   display: block;
+  margin-top: 4px;
   width: 18px;
   height: 18px;
   background: currentColor;
@@ -506,6 +487,7 @@ body.menu-open {
 .nav-toggle[aria-expanded="true"]::before {
   content: "";
   display: block;
+  margin-top: 4px;
   width: 18px;
   height: 18px;
   background: currentColor;
@@ -517,4 +499,48 @@ body.menu-open {
 
 .mobile-menu:not([hidden]) {
   display: grid !important;
+}
+
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.mobile-menu {
+  background: var(--surface);
+  padding: 0.75rem var(--gap);
+  grid-template-rows: 1fr;
+}
+.mobile-menu-nav {
+  overflow: auto;
+}
+.mobile-menu-list {
+  justify-items: center;
+}
+
+.mobile-menu:not([hidden]) {
+  display: grid !important;
+}
+
+body.menu-open .site-header {
+  position: relative;
+  z-index: 1002;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: calc(1.5rem + 65px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100dvh;
+  transform: none;
+  max-width: none;
+  z-index: 1001;
 }
