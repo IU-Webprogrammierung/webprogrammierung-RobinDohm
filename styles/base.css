@@ -228,21 +228,23 @@ h2 {
 .sakura-bg {
   position: absolute;
   top: 0;
-  width: min(46vw, 720px);
-  height: min(40vh, 343px);
+  width: 100%;
+  height: 240px;
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.9;
 }
 .sakura-bg.left {
   left: 0;
-  transform: translate(-8%, -12%);
+
   background-image: url("/public/img/background_left.avif");
+  background-position: top left;
 }
 .sakura-bg.right {
   right: 0;
-  transform: translate(8%, -12%);
+  transform: translate(0, -12%);
   background-image: url("/public/img/background_right.avif");
+  background-position: top right;
 }
 /* === Sakura Effekt (fallend) === */
 .sakura-layer {
