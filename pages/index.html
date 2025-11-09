@@ -41,8 +41,21 @@
     />
     <meta name="apple-mobile-web-app-title" content="JPBlog" />
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
-    <link rel="preload" as="image" href="/public/img/background_left.webp" />
-    <link rel="preload" as="image" href="/public/img/background_right.webp" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="/public/img/main/hero.avif"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/public/img/main/why.avif"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="/public/img/background_left.avif" />
+    <link rel="preload" as="image" href="/public/img/background_right.avif" />
   </head>
   <body>
     <header class="site-header">
@@ -142,7 +155,7 @@
         </div>
         <img
           class="index-hero-image"
-          src="/public/img/main/hero.jpg"
+          src="/public/img/main/hero.avif"
           alt="Titelbild Platzhalter"
         />
         <!-- Tablet/Desktop: Bild kann breiter/oben dargestellt werden -->
@@ -170,7 +183,7 @@
         </div>
         <img
           class="why-image"
-          src="/public/img/main/why.jpg"
+          src="/public/img/main/why.avif"
           alt="Whybild Platzhalter"
         />
       </section>
@@ -200,7 +213,7 @@
         </div>
         <img
           class="language-image"
-          src="/public/img/main/language.jpg"
+          src="/public/img/main/language.avif"
           alt="Sprach-Illustration Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild rechts -->
@@ -246,7 +259,7 @@
         </div>
         <img
           class="preparation-image"
-          src="/public/img/main/preperation.jpg"
+          src="/public/img/main/preperation.avif"
           alt="Vorbereitung Platzhalter"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild links -->

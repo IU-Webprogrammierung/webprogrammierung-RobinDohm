@@ -28,8 +28,8 @@
     <script src="/scripts/sakura.js" defer></script>
 
     <!-- Statistiken (Chart.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/scripts/japan-charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="/scripts/japan-charts.js" defer></script>
 
     <link
       rel="icon"
@@ -46,8 +46,14 @@
     />
     <meta name="apple-mobile-web-app-title" content="JPBlog" />
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
-    <link rel="preload" as="image" href="/public/img/background_left.webp" />
-    <link rel="preload" as="image" href="/public/img/background_right.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="/public/img/japan/hero.avif"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="/public/img/background_left.avif" />
+    <link rel="preload" as="image" href="/public/img/background_right.avif" />
   </head>
   <body>
     <header class="site-header">
@@ -130,8 +136,13 @@
       <section class="hero">
         <img
           class="hero-img"
-          src="/public/img/japan/hero.jpg"
-          alt="Bannerbild Japan"
+          src="/public/img/japan/hero.avif"
+          alt="Wer-sind-wir Hero"
+          width="1396"
+          height="900"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
         />
         <div class="hero-text">
           <h1>
@@ -183,13 +194,13 @@
         <div class="jp-geo-media">
           <img
             class="mobile"
-            src="/public/img/japan/geo.jpg"
-            alt="Berg- und Küstenlandschaft in Japan"
+            src="/public/img/japan/geo_mobile.avif"
+            alt="Höhenkarte von Japan"
           />
           <img
             class="desktop"
-            src="/public/img/japan/geo.jpg"
-            alt="Berg- und Küstenlandschaft in Japan"
+            src="/public/img/japan/geo.avif"
+            alt="Höhenkarte von Japan"
           />
         </div>
       </section>
@@ -233,11 +244,26 @@
             <
           </button>
           <div class="img-strip">
-            <img src="/public/img/japan/culture_01.jpg" alt="" />
-            <img src="/public/img/japan/culture_02.jpg" alt="" />
-            <img src="/public/img/japan/culture_03.jpg" alt="" />
-            <img src="/public/img/japan/culture_04.jpg" alt="" />
-            <img src="/public/img/japan/culture_05.jpg" alt="" />
+            <img
+              src="/public/img/japan/culture_01.avif"
+              alt="Japanischer Schrein mit Mount Fuji im Hintergrund"
+            />
+            <img
+              src="/public/img/japan/culture_02.avif"
+              alt="Burganlage der Stadt Kanazawa"
+            />
+            <img
+              src="/public/img/japan/culture_03.avif"
+              alt="Japanischer Tempel im Wald"
+            />
+            <img
+              src="/public/img/japan/culture_04.avif"
+              alt="Electric Town im Stadtteil Akihabara in Tokio"
+            />
+            <img
+              src="/public/img/japan/culture_05.avif"
+              alt="Das Gebäuder der Firma Fujiya im Stadtteil Ginza in Tokio"
+            />
           </div>
           <button class="img-btn img-btn-next" type="button" title="Weiter">
             >
@@ -284,8 +310,8 @@
             </div>
             <img
               class="jp-food-image-1"
-              src="/public/img/japan/food_01.jpg"
-              alt="Ramen"
+              src="/public/img/japan/food_01.avif"
+              alt="Eine Schüssel mit Ramen"
             />
           </div>
 
@@ -320,8 +346,8 @@
           <!-- Bild 2 -->
           <img
             class="jp-food-image-2"
-            src="/public/img/japan/food_02.jpg"
-            alt="Yakitori"
+            src="/public/img/japan/food_02.avif"
+            alt="Yakitori (gegrillte Hähnchenspieße)"
           />
 
           <!-- Text 3 -->
@@ -352,8 +378,8 @@
           <!-- Bild 3 -->
           <img
             class="jp-food-image-3"
-            src="/public/img/japan/food_03.jpg"
-            alt="Mochi"
+            src="/public/img/japan/food_03.avif"
+            alt="Mochi (japanische Reiskuchen, Süßigkeiten)"
           />
         </div>
       </section>
@@ -406,7 +432,7 @@
           <div class="jp-chart jp-chart-bar">
             <canvas
               id="chart-disasters"
-              aria-label="H�ufigkeit und Todesopfer ausgew�hlter Naturkatastrophen in Japan der letzten zehn Jahre"
+              aria-label="Häufigkeit und Todesopfer von Erdbeeben in Japan der letzten Jahre"
               role="img"
               style="width: 100%; height: 100%"
             ></canvas>
