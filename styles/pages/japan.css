@@ -123,9 +123,6 @@
   border: 1px solid var(--line);
   border-radius: 0.25rem;
   background: #fff;
-}
-
-.jp-chart {
   height: 220px;
   padding: 0.75rem;
 }
@@ -194,8 +191,7 @@
   }
 
   /* ===== Naturgewalten & Herausforderungen ===== */
-  .jp-chart-bar,
-  .jp-chart-line {
+  .jp-chart {
     height: 260px;
   }
 }

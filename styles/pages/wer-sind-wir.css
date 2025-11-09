@@ -128,7 +128,7 @@
     align-items: center;
   }
 
-  /* Alternate Layout für .person--alt: Text/Bild vertauschen */
+  /* Alternate Layout für .person-alt: Text/Bild vertauschen */
   .person-alt {
     grid-template-columns: 1.2fr 1fr;
     grid-template-areas:

@@ -23,6 +23,8 @@
 
 .main-nav {
   display: none;
+  position: relative;
+  gap: 0.75rem;
 }
 .main-nav a {
   text-decoration: none;
@@ -48,10 +50,7 @@
 }
 
 /* === Desktop/Tablet: Dropdown === */
-.main-nav {
-  position: relative;
-  gap: 0.75rem;
-}
+
 .main-nav a:focus-visible,
 .nav-trigger:focus-visible {
   outline: 2px solid var(--focus);
@@ -68,7 +67,9 @@
   cursor: pointer;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease, color 0.2s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
   color: inherit;
   text-decoration: none;
   line-height: 1.2;
@@ -117,7 +118,9 @@
 .nav-item:focus-within > .nav-trigger {
   background: var(--muted);
   color: var(--primary);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
   color: inherit;
   text-decoration: none;
   line-height: 1.2;
@@ -130,11 +133,6 @@
 .main-nav > a {
   display: inline-flex;
   align-items: center;
-}
-.nav-trigger {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
 }
 .has-dropdown > .nav-trigger {
   padding-right: 1.6rem;
@@ -181,11 +179,6 @@
 .mobile-menu[hidden] {
   display: none;
 }
-
-.mobile-menu {
-  display: none !important;
-}
-
 .mobile-menu-bar {
   display: none;
 }
@@ -205,9 +198,64 @@
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.mobile-menu-nav {
+/* SVG-Icons für Burger/X via CSS-Masken */
+/* https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mask */
+.nav-toggle::before {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
+    no-repeat center / contain;
+}
+.nav-toggle[aria-expanded="true"]::before {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
+    no-repeat center / contain;
+}
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+body.menu-open .site-header {
+  position: relative;
+  z-index: 1002;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: calc(1.5rem + 65px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100dvh;
+  transform: none;
+  max-width: none;
+  z-index: 1001;
+  background: var(--surface);
+  padding: 0.75rem var(--gap);
+  grid-template-rows: 1fr;
   overflow: auto;
 }
+
 .mobile-menu-list {
   list-style: none;
   margin: 0;
@@ -215,6 +263,8 @@
   display: grid;
   gap: clamp(0.75rem, 2.5vh, 1rem);
   text-align: center;
+
+  justify-items: center;
 }
 .mobile-menu-list > li > a {
   text-decoration: none;
@@ -424,9 +474,6 @@ body.menu-open {
   .nav-toggle {
     display: none !important;
   }
-  .mobile-menu {
-    display: none !important;
-  }
   .main-nav {
     display: flex !important;
   }
@@ -469,78 +516,4 @@ body.menu-open {
     background: var(--surface);
     box-shadow: var(--shadow);
   }
-}
-
-/* SVG-Icons für Burger/X via CSS-Masken */
-.nav-toggle::before {
-  content: "";
-  display: block;
-  margin-top: 4px;
-  width: 18px;
-  height: 18px;
-  background: currentColor;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
-    no-repeat center / contain;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
-    no-repeat center / contain;
-}
-.nav-toggle[aria-expanded="true"]::before {
-  content: "";
-  display: block;
-  margin-top: 4px;
-  width: 18px;
-  height: 18px;
-  background: currentColor;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
-    no-repeat center / contain;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
-    no-repeat center / contain;
-}
-
-.mobile-menu:not([hidden]) {
-  display: grid !important;
-}
-
-body.menu-open::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  pointer-events: none;
-}
-
-.mobile-menu {
-  background: var(--surface);
-  padding: 0.75rem var(--gap);
-  grid-template-rows: 1fr;
-}
-.mobile-menu-nav {
-  overflow: auto;
-}
-.mobile-menu-list {
-  justify-items: center;
-}
-
-.mobile-menu:not([hidden]) {
-  display: grid !important;
-}
-
-body.menu-open .site-header {
-  position: relative;
-  z-index: 1002;
-}
-
-.mobile-menu {
-  position: fixed;
-  top: calc(1.5rem + 65px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100dvh;
-  transform: none;
-  max-width: none;
-  z-index: 1001;
 }
