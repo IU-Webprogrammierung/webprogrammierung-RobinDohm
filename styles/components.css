@@ -162,11 +162,14 @@
   border-radius: 999px;
   width: 36px;
   height: 36px;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 0;
+  line-height: 1;
   cursor: pointer;
   display: grid;
   place-items: center;
+  position: relative;
+  z-index: 200;
+  pointer-events: auto;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 .nav-toggle:focus-visible,
@@ -180,20 +183,11 @@
 }
 
 .mobile-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: var(--surface);
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: none !important;
 }
 
 .mobile-menu-bar {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  padding: 0.75rem var(--gap);
-  border-bottom: 1px solid var(--line);
+  display: none;
 }
 
 .nav-close {
@@ -262,7 +256,7 @@
 
 /* Body fixieren, wenn Menü offen */
 body.menu-open {
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Hero */
@@ -353,8 +347,8 @@ body.menu-open {
 } /* WebKit */
 
 .img-strip img {
-  width: 100%;
-  height: clamp(140px, 24vw, 220px);
+  width: auto;
+  height: 220px;
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 0.25rem;
@@ -428,22 +422,26 @@ body.menu-open {
 @media (min-width: 768px) {
   /* Header */
   .nav-toggle {
-    display: none;
-
-    /* Nav Style auf Dekstop */
-    .main-nav {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.25rem;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 999px;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 200;
+    pointer-events: auto;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
   /* Burger nur auf Mobile */
 
   .main-nav {
-    display: flex;
+    display: flex !important;
     gap: 0.75rem;
     flex-wrap: wrap;
     align-items: center;
@@ -491,4 +489,32 @@ body.menu-open {
     background: var(--surface);
     box-shadow: var(--shadow);
   }
+}
+
+/* SVG-Icons f�r Burger/X via CSS-Masken */
+.nav-toggle::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z'/></svg>")
+    no-repeat center / contain;
+}
+.nav-toggle[aria-expanded="true"]::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2.5' stroke-linecap='round'/></svg>")
+    no-repeat center / contain;
+}
+
+.mobile-menu:not([hidden]) {
+  display: grid !important;
 }

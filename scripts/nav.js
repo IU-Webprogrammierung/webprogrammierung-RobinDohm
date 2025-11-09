@@ -1,36 +1,42 @@
 (() => {
-  const btnOpen = document.querySelector(".nav-toggle");
-  const menu = document.querySelector("#mobile-menu");
-  const btnClose = document.querySelector(".nav-close");
+  const btnOpen = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('#mobile-menu');
+  const btnClose = document.querySelector('.nav-close');
 
-  if (!btnOpen || !menu || !btnClose) return;
+  if (!btnOpen || !menu) return;
 
   function openMenu() {
-    menu.hidden = false;
-    document.body.classList.add("menu-open");
-    btnOpen.setAttribute("aria-expanded", "true");
+    menu.hidden = false; menu.style.display = "grid";
+    document.body.classList.add('menu-open');
+    btnOpen.setAttribute('aria-expanded', 'true');
+    btnOpen.setAttribute('aria-label', 'Menue schliessen');
     // Fokus auf erstes Element im Menü setzen (optional)
-    const firstLink = menu.querySelector("a, button");
-    if (firstLink) firstLink.focus();
+    const first = menu.querySelector('a, button');
+    if (first) first.focus();
   }
 
   function closeMenu() {
-    menu.hidden = true;
-    document.body.classList.remove("menu-open");
-    btnOpen.setAttribute("aria-expanded", "false");
+    menu.hidden = true; menu.style.display = "";
+    document.body.classList.remove('menu-open');
+    btnOpen.setAttribute('aria-expanded', 'false');
+    btnOpen.setAttribute('aria-label', 'Menue oeffnen');
     btnOpen.focus();
   }
 
-  btnOpen.addEventListener("click", openMenu);
-  btnClose.addEventListener("click", closeMenu);
+  function toggleMenu() {
+    if (menu.hidden) openMenu();
+    else closeMenu();
+  }
+
+  btnOpen.addEventListener('click', toggleMenu);
+  if (btnClose) btnClose.addEventListener('click', closeMenu);
 
   // ESC schließt
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !menu.hidden) closeMenu();
-  });
-
-  // Optional: Klick außerhalb der Linkliste schließt
-  menu.addEventListener("click", (e) => {
-    if (e.target === menu) closeMenu();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hidden) closeMenu();
   });
 })();
+
+
+
+
