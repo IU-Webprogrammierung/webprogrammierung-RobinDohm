@@ -61,7 +61,6 @@
 }
 .nav-trigger {
   appearance: none;
-  border: 0;
   background: transparent;
   padding: 0.4rem 0.7rem;
   cursor: pointer;
@@ -112,6 +111,10 @@
 .nav-item:focus-within > .nav-dropdown {
   display: block;
 }
+/* Öffnen via <details open> erlauben */
+.nav-item[open] > .nav-dropdown {
+  display: block;
+}
 
 /* Highlight Elternelement bei DropDown */
 .nav-item:hover > .nav-trigger,
@@ -123,7 +126,6 @@
   vertical-align: middle;
   color: inherit;
   text-decoration: none;
-  line-height: 1.2;
 }
 
 .main-nav a,
@@ -138,6 +140,9 @@
   padding-right: 1.6rem;
 }
 
+.has-dropdown > .nav-trigger {
+  list-style: none;
+}
 .has-dropdown > .nav-trigger::after {
   content: "";
   position: absolute;
@@ -150,6 +155,13 @@
   border-right: 4px solid transparent;
   border-top: 5px solid currentColor;
   opacity: 0.7;
+}
+/* Summary-Default-Marker ausblenden */
+.has-dropdown > .nav-trigger::-webkit-details-marker {
+  display: none;
+}
+.has-dropdown > .nav-trigger::marker {
+  content: "";
 }
 
 /* === Mobile: Overlay-Menü === */
@@ -203,7 +215,6 @@
 .nav-toggle::before {
   content: "";
   display: block;
-  margin-top: 4px;
   width: 18px;
   height: 18px;
   background: currentColor;
@@ -213,7 +224,6 @@
 .nav-toggle[aria-expanded="true"]::before {
   content: "";
   display: block;
-  margin-top: 4px;
   width: 18px;
   height: 18px;
   background: currentColor;
@@ -424,6 +434,7 @@ body.menu-open {
 .site-footer {
   border-top: 1px solid var(--line);
   padding-block: 1rem;
+  min-height: 114px;
 }
 
 .site-footer p {

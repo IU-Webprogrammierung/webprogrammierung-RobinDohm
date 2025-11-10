@@ -1,0 +1,41 @@
+<div class="brand">
+  <a class="logo" href="/pages/index.html"
+    ><img src="/public/img/logo.avif" alt="Startseite"
+  /></a>
+</div>
+
+<!-- Desktop/Tablet-Navigation (ab 768px sichtbar) -->
+<nav class="main-nav" aria-label="Hauptnavigation">
+  <a href="/pages/index.html" data-nav="index">Start</a>
+  <a href="/pages/japan.html" data-nav="japan">Japan</a>
+
+  <!-- Dropdown ohne eigene Städte-Seite (details/summary für CSS‑Toggle) -->
+  <details class="nav-item has-dropdown">
+    <summary class="nav-link nav-trigger" aria-haspopup="true" data-nav="cities">
+      Städte
+    </summary>
+    <ul class="nav-dropdown" aria-label="Städte">
+      <li><a href="/pages/staedte/tokyo.html" data-nav="tokyo">Tokyo</a></li>
+      <li>
+        <a href="/pages/staedte/kanazawa.html" data-nav="kanazawa">Kanazawa</a>
+      </li>
+      <li><a href="/pages/staedte/kyoto.html" data-nav="kyoto">Kyoto</a></li>
+      <li>
+        <a href="/pages/staedte/hiroshima.html" data-nav="hiroshima">Hiroshima</a>
+      </li>
+      <li><a href="/pages/staedte/osaka.html" data-nav="osaka">Osaka</a></li>
+    </ul>
+  </details>
+
+  <a href="/pages/wer-sind-wir.html" data-nav="about">Wer sind wir</a>
+</nav>
+
+<!-- Burger (nur Mobile sichtbar) -> Icon via CSS ::before -->
+<button
+  class="nav-toggle"
+  type="button"
+  aria-controls="mobile-menu"
+  aria-expanded="false"
+  aria-label="Menue oeffnen"
+></button>
+

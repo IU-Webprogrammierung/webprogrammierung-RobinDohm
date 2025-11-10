@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-active="index">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,9 @@
     <noscript
       ><link rel="stylesheet" href="/styles/pages/index.css"
     /></noscript>
+
+    <!-- Lade die Componenten asynchron -->
+    <script src="/scripts/component-loader.js" defer></script>
 
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/sakura.js" defer></script>
@@ -59,78 +62,12 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="brand">
-        <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.avif" alt="Startseite"
-        /></a>
-      </div>
-
-      <!-- Desktop/Tablet-Navigation (ab 768px sichtbar) -->
-      <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="/pages/index.html" class="active">Start</a>
-        <a href="/pages/japan.html">Japan</a>
-
-        <!-- Dropdown ohne eigene Städte-Seite -->
-        <div class="nav-item has-dropdown">
-          <button
-            class="nav-link nav-trigger"
-            type="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Städte
-          </button>
-          <ul class="nav-dropdown" aria-label="Städte">
-            <li><a href="/pages/staedte/tokyo.html">Tokyo</a></li>
-            <li><a href="/pages/staedte/kanazawa.html">Kanazawa</a></li>
-            <li><a href="/pages/staedte/kyoto.html">Kyoto</a></li>
-            <li><a href="/pages/staedte/hiroshima.html">Hiroshima</a></li>
-            <li><a href="/pages/staedte/osaka.html">Osaka</a></li>
-          </ul>
-        </div>
-
-        <a href="/pages/wer-sind-wir.html">Wer sind wir</a>
-      </nav>
-
-      <!-- Burger (nur Mobile sichtbar) -->
-      <button
-        class="nav-toggle"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-        aria-label="Menü öffnen"
-      >
-        ☰
-      </button>
+      <!-- Inhalt wird aus /components/header.html geladen -->
     </header>
 
     <!-- Mobile Overlay-Menü -->
     <div id="mobile-menu" class="mobile-menu" hidden>
-      <div class="mobile-menu-bar">
-        <a class="logo" href="/pages/index.html"
-          ><img src="/public/img/logo.avif" alt="Startseite"
-        /></a>
-        <button class="nav-close" aria-label="Menü schließen">×</button>
-      </div>
-
-      <nav class="mobile-menu-nav" aria-label="Mobiles Menü">
-        <ul class="mobile-menu-list">
-          <li><a href="/pages/index.html" class="active">Start</a></li>
-          <li><a href="/pages/japan.html">Japan</a></li>
-
-          <li class="mobile-group">
-            <span class="mobile-group-label">Städte</span>
-            <ul class="mobile-sub">
-              <li><a href="/pages/staedte/tokyo.html">Tokyo</a></li>
-              <li><a href="/pages/staedte/kanazawa.html">Kanazawa</a></li>
-              <li><a href="/pages/staedte/kyoto.html">Kyoto</a></li>
-              <li><a href="/pages/staedte/hiroshima.html">Hiroshima</a></li>
-              <li><a href="/pages/staedte/osaka.html">Osaka</a></li>
-            </ul>
-          </li>
-
-          <li><a href="/pages/wer-sind-wir.html">Wer sind wir</a></li>
-        </ul>
-      </nav>
+      <!-- Inhalt wird aus /components/mobile_nav.html geladen -->
     </div>
 
     <main id="index">
@@ -156,7 +93,12 @@
         <img
           class="index-hero-image"
           src="/public/img/main/hero.avif"
-          alt="Titelbild Platzhalter"
+          alt="Jessi und Robin in Kanazawa auf einer Straße bei Nacht"
+          width="550"
+          height="413"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
         />
         <!-- Tablet/Desktop: Bild kann breiter/oben dargestellt werden -->
       </section>
@@ -184,7 +126,12 @@
         <img
           class="why-image"
           src="/public/img/main/why.avif"
-          alt="Whybild Platzhalter"
+          alt="Das Workshop-Team der DoKomi von Robin und Jessi"
+          width="550"
+          height="398"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
         />
       </section>
 
@@ -214,7 +161,7 @@
         <img
           class="language-image"
           src="/public/img/main/language.avif"
-          alt="Sprach-Illustration Platzhalter"
+          alt="Jessis Tablet mit ihren japanisch Unterlagen"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild rechts -->
       </section>
@@ -260,7 +207,7 @@
         <img
           class="preparation-image"
           src="/public/img/main/preperation.avif"
-          alt="Vorbereitung Platzhalter"
+          alt="Zwei Koffer die auf dem Bett liegen und gerade gepackt werden"
         />
         <!-- Tablet/Desktop: zweispaltig, Bild links -->
       </section>
@@ -383,14 +330,8 @@
       </section>
     </main>
 
-    <!-- Mobile-first Footer: small, linear -->
     <footer class="site-footer">
-      <nav class="footer-nav">
-        <a href="/pages/impressum.html">Impressum</a>
-        <a href="/pages/datenschutz.html">Datenschutz</a>
-        <a href="/pages/cookies.html">Cookies</a>
-      </nav>
-      <p>© 2025 Robin Dohm</p>
+      <!-- Inhalt wird aus /components/footer.html geladen -->
     </footer>
   </body>
 </html>
