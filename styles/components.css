@@ -111,7 +111,7 @@
 .nav-item:focus-within > .nav-dropdown {
   display: block;
 }
-/* Öffnen via <details open> erlauben */
+/* Öffnen via <details open> */
 .nav-item[open] > .nav-dropdown {
   display: block;
 }
