@@ -59,16 +59,18 @@
     <link rel="preload" as="image" href="/public/img/background_right.avif" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
       <!-- Inhalt wird aus /components/header.html geladen -->
     </header>
 
     <!-- Mobile Overlay-Menü -->
-    <div id="mobile-menu" class="mobile-menu" hidden>
+    <div id="mobile-menu" class="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Menü">
       <!-- Inhalt wird aus /components/mobile_nav.html geladen -->
     </div>
 
     <main id="japan">
+      <a id="main" tabindex="-1"></a>
       <!-- Hero -->
       <section class="hero">
         <img
@@ -177,7 +179,7 @@
 
         <!-- Bildleiste: horizontal scrollen in einer Reihe -->
         <div class="img-rail">
-          <button class="img-btn img-btn-prev" type="button" title="Zurück">
+          <button class="img-btn img-btn-prev" type="button" title="Zurück" aria-label="Vorheriges Bild">
             &lt;
           </button>
           <div class="img-strip">
@@ -202,7 +204,7 @@
               alt="Das Gebäuder der Firma Fujiya im Stadtteil Ginza in Tokio"
             />
           </div>
-          <button class="img-btn img-btn-next" type="button" title="Weiter">
+          <button class="img-btn img-btn-next" type="button" title="Weiter" aria-label="Nächstes Bild">
             &gt;
           </button>
         </div>

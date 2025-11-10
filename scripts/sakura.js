@@ -2,7 +2,8 @@
   // Fallende Blütenblätter initialisieren
   function init() {
     const vw = window.innerWidth || document.documentElement.clientWidth || 0;
-    const showParticles = vw >= 1150; // Nur bei ≥1150px Breite animieren
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const showParticles = vw >= 1150 && !reduceMotion; // Nur bei ≥1150px Breite animieren, außer Reduced Motion
     const COUNT = showParticles ? 20 : 0;
 
     // Zweige bis zu einer Breite von 768px ausblenden

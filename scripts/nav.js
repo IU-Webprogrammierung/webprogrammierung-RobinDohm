@@ -34,8 +34,11 @@
       btnOpen.setAttribute("aria-expanded", "true");
       btnOpen.setAttribute("aria-label", "Menue schliessen");
 
-      // Fokus auf erstes interaktives Element im Menü setzen
-      const first = menu.querySelector("a, button");
+      // Fokusfalle aktivieren und Fokus auf erstes Element setzen
+      enableFocusTrap();
+      const first = menu.querySelector(
+        "a, button, [tabindex]:not([tabindex='-1'])"
+      );
       if (first) first.focus();
     }
 
@@ -60,6 +63,8 @@
       btnOpen.setAttribute("aria-expanded", "false");
       btnOpen.setAttribute("aria-label", "Menue oeffnen");
 
+      // Fokusfalle deaktivieren
+      disableFocusTrap();
       // Fokus zurück auf Öffnen-Button
       btnOpen.focus();
     }
@@ -86,6 +91,45 @@
       }
     });
 
+    // Fokusfallen-Logik
+    let trapHandler = null;
+    function getFocusable() {
+      return Array.from(
+        menu.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => !el.hasAttribute("hidden") && el.offsetParent !== null);
+    }
+    function onKeyDown(e) {
+      if (menu.hidden) return;
+      if (e.key !== "Tab") return;
+      const focusables = getFocusable();
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+    function enableFocusTrap() {
+      if (trapHandler) return;
+      trapHandler = onKeyDown;
+      menu.addEventListener("keydown", trapHandler);
+    }
+    function disableFocusTrap() {
+      if (!trapHandler) return;
+      menu.removeEventListener("keydown", trapHandler);
+      trapHandler = null;
+    }
+
     menu.dataset.navBound = "1";
   }
 
@@ -108,12 +152,21 @@
       document.querySelectorAll("[data-nav]").forEach(function (el) {
         el.classList.remove("active");
       });
+      document
+        .querySelectorAll('a[aria-current="page"]')
+        .forEach(function (el) {
+          el.removeAttribute("aria-current");
+        });
 
       // Für jeden Key passende Elemente aktiv setzen
       keys.forEach(function (key) {
         var sel = '[data-nav="' + key + '"]';
         document.querySelectorAll(sel).forEach(function (el) {
           el.classList.add("active");
+          // kennzeichnet den aktuellen Navigationslink gemäß WAI-ARIA.
+          if (el.tagName === "A") {
+            el.setAttribute("aria-current", "page");
+          }
         });
       });
     } catch (e) {}

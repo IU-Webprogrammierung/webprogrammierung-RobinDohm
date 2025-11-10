@@ -1,7 +1,7 @@
 <div class="brand">
-  <a class="logo" href="/pages/index.html"
-    ><img src="/public/img/logo.avif" alt="Startseite"
-  /></a>
+  <a class="logo" href="/pages/index.html" aria-label="Startseite"
+    ><img src="/public/img/logo.avif" alt="Logo von JPBlog" />
+  </a>
 </div>
 
 <!-- Desktop/Tablet-Navigation (ab 768px sichtbar) -->
@@ -11,7 +11,11 @@
 
   <!-- Dropdown ohne eigene Städte-Seite (details/summary für CSS‑Toggle) -->
   <details class="nav-item has-dropdown">
-    <summary class="nav-link nav-trigger" aria-haspopup="true" data-nav="cities">
+    <summary
+      class="nav-link nav-trigger"
+      aria-haspopup="true"
+      data-nav="cities"
+    >
       Städte
     </summary>
     <ul class="nav-dropdown" aria-label="Städte">
@@ -21,7 +25,9 @@
       </li>
       <li><a href="/pages/staedte/kyoto.html" data-nav="kyoto">Kyoto</a></li>
       <li>
-        <a href="/pages/staedte/hiroshima.html" data-nav="hiroshima">Hiroshima</a>
+        <a href="/pages/staedte/hiroshima.html" data-nav="hiroshima"
+          >Hiroshima</a
+        >
       </li>
       <li><a href="/pages/staedte/osaka.html" data-nav="osaka">Osaka</a></li>
     </ul>
@@ -36,6 +42,5 @@
   type="button"
   aria-controls="mobile-menu"
   aria-expanded="false"
-  aria-label="Menue oeffnen"
+  aria-label="Menue öffnen"
 ></button>
-

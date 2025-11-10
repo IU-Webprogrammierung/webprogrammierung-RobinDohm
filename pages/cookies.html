@@ -32,16 +32,18 @@
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
       <!-- Inhalt wird aus /components/header.html geladen -->
     </header>
 
     <!-- Mobile Overlay-Menü -->
-    <div id="mobile-menu" class="mobile-menu" hidden>
+    <div id="mobile-menu" class="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Menü">
       <!-- Inhalt wird aus /components/mobile_nav.html geladen -->
     </div>
 
     <main id="cookies">
+      <a id="main" tabindex="-1"></a>
       <section>
         <div>
           <h1>Cookies</h1>
