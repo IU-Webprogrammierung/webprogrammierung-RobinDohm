@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Footer } from "./components/Footer";
 
 const notoSans = localFont({
   src: [
@@ -80,7 +81,10 @@ export default function RootLayout({
       className={`${notoSans.variable} ${notoSerif.variable} ${yujiBoku.variable} ${caveat.variable}`}
     >
       <meta name="apple-mobile-web-app-title" content="JPBlog" />
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
