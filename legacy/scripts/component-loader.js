@@ -25,17 +25,16 @@
 
   onReady(function () {
     Promise.all([
-      inject("header.site-header", "/components/header.html"),
-      inject("#mobile-menu", "/components/mobile_nav.html"),
+      inject("header.site-header", "/legacy/components/header.html"),
+      inject("#mobile-menu", "/legacy/components/mobile_nav.html"),
     ])
       .then(function () {
         if (window.initNav) window.initNav();
         if (window.markActiveNav) window.markActiveNav();
-        return inject("footer.site-footer", "/components/footer.html");
+        return inject("footer.site-footer", "/legacy/components/footer.html");
       })
       .catch(function (e) {
         console.warn("Component load failed", e);
       });
   });
 })();
-

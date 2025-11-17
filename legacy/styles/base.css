@@ -1,7 +1,7 @@
 /* Local webfonts */
 @font-face {
   font-family: "Noto Sans";
-  src: url("../public/fonts/Noto_Sans/NotoSans-Bold.woff2") format("woff2");
+  src: url("../../public/fonts/Noto_Sans/NotoSans-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,8 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../public/fonts/Noto_Sans/NotoSans-Regular.woff2") format("woff2");
+  src: url("../../public/fonts/Noto_Sans/NotoSans-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -17,7 +18,7 @@
 
 @font-face {
   font-family: "Caveat";
-  src: url("../public/fonts/Caveat/Caveat-SemiBold.woff2") format("woff2");
+  src: url("../../public/fonts/Caveat/Caveat-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -25,7 +26,7 @@
 
 @font-face {
   font-family: "Noto Serif";
-  src: url("../public/fonts/Noto_Serif/NotoSerif-Bold.woff2") format("woff2");
+  src: url("../../public/fonts/Noto_Serif/NotoSerif-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -33,7 +34,7 @@
 
 @font-face {
   font-family: "Noto Serif";
-  src: url("../public/fonts/Noto_Serif/NotoSerif-SemiBold.woff2")
+  src: url("../../public/fonts/Noto_Serif/NotoSerif-SemiBold.woff2")
     format("woff2");
   font-weight: 600;
   font-style: normal;
@@ -42,7 +43,8 @@
 
 @font-face {
   font-family: "Yuji Boku";
-  src: url("../public/fonts/Yuji_Boku/YujiBoku-Regular.woff2") format("woff2");
+  src: url("../../public/fonts/Yuji_Boku/YujiBoku-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

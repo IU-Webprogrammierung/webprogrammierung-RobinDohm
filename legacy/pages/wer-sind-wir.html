@@ -5,30 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wer sind wir - Japanreisebericht</title>
 
-    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/legacy/styles/base.css" />
     <link
       rel="preload"
-      href="/styles/components.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="/styles/components.css" /></noscript>
-    <link
-      rel="preload"
-      href="/styles/pages/wer-sind-wir.css"
+      href="/legacy/styles/components.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript
-      ><link rel="stylesheet" href="/styles/pages/wer-sind-wir.css"
+      ><link rel="stylesheet" href="/legacy/styles/components.css"
+    /></noscript>
+    <link
+      rel="preload"
+      href="/legacy/styles/pages/wer-sind-wir.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/legacy/styles/pages/wer-sind-wir.css"
     /></noscript>
 
     <!-- Lade die Componenten asynchron -->
-    <script src="/scripts/component-loader.js" defer></script>
+    <script src="/legacy/scripts/component-loader.js" defer></script>
 
-    <script src="/scripts/nav.js" defer></script>
-    <script src="/scripts/carousell.js" defer></script>
-    <script src="/scripts/sakura.js" defer></script>
+    <script src="/legacy/scripts/nav.js" defer></script>
+    <script src="/legacy/scripts/carousell.js" defer></script>
+    <script src="/legacy/scripts/sakura.js" defer></script>
 
     <link
       rel="icon"
@@ -63,7 +65,14 @@
     </header>
 
     <!-- Mobile Overlay-Menü -->
-    <div id="mobile-menu" class="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Menü">
+    <div
+      id="mobile-menu"
+      class="mobile-menu"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menü"
+    >
       <!-- Inhalt wird aus /components/mobile_nav.html geladen -->
     </div>
 
@@ -227,7 +236,12 @@
       <section id="momente">
         <h2>Unsere Lieblingsmomente</h2>
         <div class="img-rail">
-          <button class="img-btn img-btn-prev" type="button" title="Zurück" aria-label="Vorheriges Bild">
+          <button
+            class="img-btn img-btn-prev"
+            type="button"
+            title="Zurück"
+            aria-label="Vorheriges Bild"
+          >
             &lt;
           </button>
           <div class="img-strip">
@@ -264,7 +278,12 @@
               alt="Robin und Kater Kumo vor dem Computer"
             />
           </div>
-          <button class="img-btn img-btn-next" type="button" title="Weiter" aria-label="Nächstes Bild">
+          <button
+            class="img-btn img-btn-next"
+            type="button"
+            title="Weiter"
+            aria-label="Nächstes Bild"
+          >
             &gt;
           </button>
         </div>

@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start - Japan Reisebericht</title>
 
-    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/legacy/styles/base.css" />
     <link
       rel="preload"
-      href="/styles/components.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="/styles/components.css" /></noscript>
-    <link
-      rel="preload"
-      href="/styles/pages/index.css"
+      href="/legacy/styles/components.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript
-      ><link rel="stylesheet" href="/styles/pages/index.css"
+      ><link rel="stylesheet" href="/legacy/styles/components.css"
+    /></noscript>
+    <link
+      rel="preload"
+      href="/legacy/styles/pages/index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/legacy/styles/pages/index.css"
     /></noscript>
 
     <!-- Lade die Componenten asynchron -->
-    <script src="/scripts/component-loader.js" defer></script>
+    <script src="/legacy/scripts/component-loader.js" defer></script>
 
-    <script src="/scripts/nav.js" defer></script>
-    <script src="/scripts/sakura.js" defer></script>
+    <script src="/legacy/scripts/nav.js" defer></script>
+    <script src="/legacy/scripts/sakura.js" defer></script>
 
     <link
       rel="icon"
@@ -287,11 +289,11 @@
           class="itinerary-image itinerary-map"
           aria-label="Japan-Karte mit markierten Städten"
         >
-          <img src="../public/svg/mapofjapan.svg" alt="Karte von Japan" defer />
+          <img src="/public/svg/mapofjapan.svg" alt="Karte von Japan" defer />
           <!-- Interaktive Städte-Pins -->
           <a
             class="map-pin"
-            href="/pages/staedte/tokyo.html"
+            href="/legacy/pages/staedte/tokyo.html"
             style="--x: 65%; --y: 68%"
             aria-label="Tokyo"
             title="Tokyo"
@@ -300,7 +302,7 @@
           </a>
           <a
             class="map-pin"
-            href="/pages/staedte/kanazawa.html"
+            href="/legacy/pages/staedte/kanazawa.html"
             style="--x: 46%; --y: 62%"
             aria-label="Kanazawa"
             title="Kanazawa"
@@ -309,7 +311,7 @@
           </a>
           <a
             class="map-pin"
-            href="/pages/staedte/kyoto.html"
+            href="/legacy/pages/staedte/kyoto.html"
             style="--x: 42%; --y: 70%"
             aria-label="Kyoto"
             title="Kyoto"
@@ -318,7 +320,7 @@
           </a>
           <a
             class="map-pin"
-            href="/pages/staedte/osaka.html"
+            href="/legacy/pages/staedte/osaka.html"
             style="--x: 40%; --y: 73%"
             aria-label="Osaka"
             title="Osaka"
@@ -327,7 +329,7 @@
           </a>
           <a
             class="map-pin"
-            href="/pages/staedte/hiroshima.html"
+            href="/legacy/pages/staedte/hiroshima.html"
             style="--x: 22%; --y: 75%"
             aria-label="Hiroshima"
             title="Hiroshima"
