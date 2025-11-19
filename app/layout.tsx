@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 
 const notoSans = localFont({
   src: [
@@ -82,6 +83,7 @@ export default function RootLayout({
     >
       <meta name="apple-mobile-web-app-title" content="JPBlog" />
       <body className="antialiased">
+        <Header />
         {children}
         <Footer />
       </body>

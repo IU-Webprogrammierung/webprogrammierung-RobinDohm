@@ -8,7 +8,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="min-h-[114px] border-t border-line px-4 py-4 text-text">
+    <footer className="min-h-[114px] px-4 py-4 text-text">
       <nav
         className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-4"
         aria-label="Footer"
