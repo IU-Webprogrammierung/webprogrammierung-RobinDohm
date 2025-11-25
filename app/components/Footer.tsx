@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/legacy/pages/impressum.html", label: "Impressum" },
-  { href: "/legacy/pages/datenschutz.html", label: "Datenschutz" },
-  { href: "/legacy/pages/cookies.html", label: "Cookies" },
+  { href: "/impressum", label: "Impressum" },
+  { href: "/datenschutz", label: "Datenschutz" },
+  { href: "/cookies", label: "Cookies" },
 ] as const;
 
 export function Footer() {
