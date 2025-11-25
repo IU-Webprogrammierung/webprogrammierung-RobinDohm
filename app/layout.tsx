@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { SakuraOverlay } from "./components/SakuraOverlay";
 
 const notoSans = localFont({
   src: [
@@ -83,6 +84,7 @@ export default function RootLayout({
     >
       <meta name="apple-mobile-web-app-title" content="JPBlog" />
       <body className="antialiased">
+        <SakuraOverlay />
         <Header />
         {children}
         <Footer />

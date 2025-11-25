@@ -233,14 +233,14 @@
 
   .sakura-bg.left {
     left: 0;
-    background-image: url("/public/img/background_left.avif");
+    background-image: url("/img/background_left.avif");
     background-position: top left;
   }
 
   .sakura-bg.right {
     right: 0;
     transform: translate(0, -12%);
-    background-image: url("/public/img/background_right.avif");
+    background-image: url("/img/background_right.avif");
     background-position: top right;
   }
 
