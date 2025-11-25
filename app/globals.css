@@ -318,10 +318,6 @@
   }
 
   .sakura-layer,
-  .sakura-images {
-    display: none;
-  }
-
   .sakura-petal > .petal-inner {
     animation: none;
   }
