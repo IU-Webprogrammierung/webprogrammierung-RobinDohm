@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { Hero } from "@/components/Hero";
-import { geoContent } from "@/data/japan";
+import { cultureContent, geoContent } from "@/data/japan";
+import { ImageRail } from "@/components/ImageRail";
 
 export default function Japan() {
   return (
@@ -60,6 +61,17 @@ export default function Japan() {
             priority
           />
         </div>
+      </section>
+
+      {/* Kultur & Gesellschaft */}
+      <section id="jp-culture">
+        <h2>{cultureContent.heading}</h2>
+        {cultureContent.paragraphs.map((p, index) => (
+          <p className="py-2" key={`jp-culture-paragraph-${index + 1}`}>
+            {p}
+          </p>
+        ))}
+        <ImageRail images={cultureContent.images} />
       </section>
     </main>
   );
