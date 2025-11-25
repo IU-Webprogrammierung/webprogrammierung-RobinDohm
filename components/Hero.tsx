@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 type HeroProps = {
-  title: React.ReactNode;
+  title: React.ReactNode | string;
   subtitle?: React.ReactNode;
   imageSrc: string;
   imageAlt: string;

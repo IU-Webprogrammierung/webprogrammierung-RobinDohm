@@ -1,7 +1,7 @@
-import { ItinerarySection } from "./components/ItinerarySection";
-import { SplitSection } from "./components/SplitSection";
-import { splitSections } from "./data/split-sections";
-import { cityPins, itineraryStops } from "./data/itinerary";
+import { ItinerarySection } from "@/components/ItinerarySection";
+import { SplitSection } from "@/components/SplitSection";
+import { splitSections } from "@/data/split-sections";
+import { cityPins, itineraryStops } from "@/data/itinerary";
 
 export default function Home() {
   return (

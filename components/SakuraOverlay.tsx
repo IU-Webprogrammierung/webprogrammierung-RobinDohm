@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { CSSProperties } from "react";
-import { useSakura } from "../hooks/useSakura";
+import { useSakura } from "@/hooks/useSakura";
 
 export function SakuraOverlay() {
   const { showBranches, petals } = useSakura();
@@ -21,20 +21,24 @@ export function SakuraOverlay() {
             <span
               key={petal.id}
               className="sakura-petal"
-              style={{
-                "--x": petal.x,
-                "--size": petal.size,
-                "--rot": petal.rot,
-                "--dur": petal.dur,
-                "--delay": petal.delay,
-              } as CSSProperties}
+              style={
+                {
+                  "--x": petal.x,
+                  "--size": petal.size,
+                  "--rot": petal.rot,
+                  "--dur": petal.dur,
+                  "--delay": petal.delay,
+                } as CSSProperties
+              }
             >
               <span
                 className="petal-inner"
-                style={{
-                  backgroundImage: `url(${petal.texture})`,
-                  "--spinDur": petal.spinDur,
-                } as CSSProperties}
+                style={
+                  {
+                    backgroundImage: `url(${petal.texture})`,
+                    "--spinDur": petal.spinDur,
+                  } as CSSProperties
+                }
               />
             </span>
           ))}
