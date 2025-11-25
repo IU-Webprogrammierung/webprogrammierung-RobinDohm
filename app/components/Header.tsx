@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type NavLink = {
   href: string;
@@ -84,6 +84,7 @@ const CloseIcon = () => (
 export function Header() {
   const pathname = usePathname() || "/";
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [cityOpen, setCityOpen] = useState(false);
 
   const normalize = (value: string) =>
     value === "/" ? "/" : value.replace(/\/$/, "");
@@ -100,6 +101,50 @@ export function Header() {
   const cityActive = cityLinks.some(isActive);
 
   const closeMobile = () => setMobileOpen(false);
+  const closeCity = () => setCityOpen(false);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const body = document.body;
+    const html = document.documentElement;
+    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
+    body.dataset.lockScrollY = String(scrollY);
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    html.style.overflowY = "scroll";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        setCityOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      const y = parseInt(body.dataset.lockScrollY || "0", 10) || 0;
+      body.style.position = "";
+      body.style.top = "";
+      body.style.width = "";
+      html.style.overflowY = "";
+      window.scrollTo(0, y);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const handler = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        setMobileOpen(false);
+        setCityOpen(false);
+      }
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   return (
     <>
@@ -128,18 +173,23 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={closeCity}
                 className={`${linkBase} ${isActive(link) ? activeClasses : ""}`}
               >
                 {link.label}
               </Link>
             ))}
 
-            <details className="relative">
+            <details className="relative" open={cityOpen}>
               <summary
                 className={`flex cursor-pointer items-center appearance-none ${linkBase} ${
                   cityActive ? activeClasses : ""
                 }`}
                 aria-haspopup="true"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCityOpen((prev) => !prev);
+                }}
               >
                 Städte
                 <ChevronDown />
@@ -149,6 +199,7 @@ export function Header() {
                   <li key={city.href}>
                     <Link
                       href={city.href}
+                      onClick={closeCity}
                       className={`block rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-muted hover:text-primary no-underline ${
                         isActive(city) ? activeClasses : ""
                       }`}
@@ -162,6 +213,7 @@ export function Header() {
 
             <Link
               href={primaryLinks[2].href}
+              onClick={closeCity}
               className={`${linkBase} ${
                 isActive(primaryLinks[2]) ? activeClasses : ""
               }`}
@@ -175,11 +227,11 @@ export function Header() {
             type="button"
             aria-controls="mobile-menu"
             aria-expanded={mobileOpen}
-            aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-label={mobileOpen ? "Menü schliessen" : "Menü öffnen"}
             onClick={() => setMobileOpen((prev) => !prev)}
           >
             <span className="sr-only">
-              {mobileOpen ? "Menü schließen" : "Menü öffnen"}
+              {mobileOpen ? "Menü schliessen" : "Menü öffnen"}
             </span>
             {mobileOpen ? <CloseIcon /> : <HamburgerIcon />}
           </button>
@@ -203,7 +255,10 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    onClick={closeMobile}
+                    onClick={() => {
+                      closeMobile();
+                      closeCity();
+                    }}
                     className={`block rounded-md px-3 py-2 transition-colors hover:text-primary no-underline ${
                       isActive(link) ? activeClasses : ""
                     }`}
@@ -220,7 +275,10 @@ export function Header() {
                     <li key={city.href}>
                       <Link
                         href={city.href}
-                        onClick={closeMobile}
+                        onClick={() => {
+                          closeMobile();
+                          closeCity();
+                        }}
                         className={`block rounded-md px-3 py-1 transition-colors hover:text-primary no-underline ${
                           isActive(city) ? activeClasses : ""
                         }`}
@@ -235,7 +293,10 @@ export function Header() {
               <li>
                 <Link
                   href={primaryLinks[2].href}
-                  onClick={closeMobile}
+                  onClick={() => {
+                    closeMobile();
+                    closeCity();
+                  }}
                   className={`block rounded-md px-3 py-1 transition-colors hover:text-primary no-underline ${
                     isActive(primaryLinks[2]) ? activeClasses : ""
                   }`}

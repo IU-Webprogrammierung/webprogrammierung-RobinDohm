@@ -7,9 +7,6 @@ export default function Home() {
   return (
     <>
       {/* ToDo: Skiplink implementieren */}
-
-      {/* ToDo: Header implementieren (mobile nav?) */}
-
       <main id="index">
         <div id="main" tabIndex={-1} />
 
@@ -26,8 +23,6 @@ export default function Home() {
           pins={cityPins}
         />
       </main>
-
-      {/* ToDo: Implement Footer */}
     </>
   );
 }
