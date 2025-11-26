@@ -8,6 +8,7 @@
   --radius: 12px;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow-sticky: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 @theme {
@@ -20,6 +21,7 @@
   --color-accent: #c81d2540;
   --color-line: #dbe7f3;
   --color-focus: #0b5fff;
+  --color-sticky: #fde68a;
   --spacing-custom: var(--space);
 
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -38,6 +40,7 @@
   --radius-card: var(--radius);
   --shadow-card: var(--shadow);
   --shadow-card-hover: var(--shadow-hover);
+  --shadow-stickynote: var(--shadow-sticky);
 }
 
 /* Base styles so Tailwind utilities pick up the tokens */
