@@ -7,6 +7,8 @@ import { ControlButton } from "./imagerail/ControlButton";
 type ImageRailItem = {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
 type ImageRailProps = {
@@ -214,9 +216,8 @@ export function ImageRail({ images, className }: ImageRailProps) {
             <Image
               src={img.src}
               alt={img.alt}
-              width={800}
-              height={600}
-              className="w-full h-[220px] object-cover"
+              width={img.width}
+              height={img.height}
             />
 
             {/* Overlay: fährt von unten rein */}
