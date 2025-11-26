@@ -1,4 +1,4 @@
-import type { SplitSectionProps } from "../components/SplitSection";
+import type { SplitSectionProps } from "../components/sections/main/SplitSection";
 
 export const splitSections: SplitSectionProps[] = [
   {

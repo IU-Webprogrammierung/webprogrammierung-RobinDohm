@@ -20,12 +20,36 @@ export type CultureContent = {
   images: Image[];
 };
 
-export interface FoodContent {
+export type FoodContent = {
   heading: string;
   note: string;
   paragraphs: ReactNode[];
   images: Image[];
-}
+};
+
+export type RisksBlockChartSeries = {
+  name: string;
+  data: number[];
+  yAxis?: "primary" | "secondary";
+};
+
+export type RisksBlockChart = {
+  type: "bar" | "line";
+  xLabels: string[];
+  series: RisksBlockChartSeries[];
+};
+
+export type RisksBlock = {
+  title: string;
+  paragraphs: string[];
+  chart: RisksBlockChart;
+};
+
+export type RisksContent = {
+  heading: string;
+  intro: string[];
+  blocks: RisksBlock[];
+};
 
 export const geoContent: GeoContent = {
   heading: "Geografie & Natur",
@@ -185,6 +209,94 @@ export const foodContent: FoodContent = {
       alt: "Mochi (japanische Reiskuchen, Süßigkeiten)",
       width: 360,
       height: 260,
+    },
+  ],
+};
+
+export const risksContent: RisksContent = {
+  heading: "Naturgewalten & Herausforderungen",
+  intro: [
+    "Japan liegt am Rand des Pazifischen Feuerrings. Das bedeutet, es gibt regelmäßig Erdbeben, starke Stürme und aktive Vulkane. Viele Menschen fragen sich deshalb, ob Reisen oder Leben dort gefährlich ist.",
+    "Die gute Nachricht ist, dass Japan sehr gut vorbereitet ist. Häuser und Brücken sind flexibel gebaut, Warn Apps informieren schnell und in Schulen sowie Firmen wird das Verhalten im Notfall geübt. Dadurch passieren trotz häufiger Ereignisse vergleichsweise wenige schwere Unfälle.",
+    "Im Alltag helfen klare Routinen. Ruhe bewahren, Türen öffnen, Gas ausschalten, sich kurz schützen und dann geordnet ins Freie gehen. So bleibt das Leben planbar, auch in einem Land mit sehr aktiver Natur.",
+  ],
+  blocks: [
+    {
+      title: "Häufigkeit & Opfer von Naturkatastrophen",
+      paragraphs: [
+        "In Japan kommen Naturereignisse sehr häufig vor. Erdbeben werden täglich gemessen, Taifune ziehen in manchen Jahren mehrfach über die Inseln und Vulkane sind aktiv. Für Außenstehende klingt das bedrohlich, doch die Zahlen zu Verletzten und Todesfällen bleiben im Vergleich oft gering.",
+        "Dafür gibt es klare Gründe. Gebäude sind erdbebensicher, Straßen und Brücken werden regelmäßig geprüft und Warnsysteme sind gut ausgebaut. Übungen in Schulen und Betrieben machen Abläufe vertraut. Menschen wissen, wie sie sich verhalten sollen, und Behörden leiten Evakuierungen schnell ein. So trifft hohe Ereignishäufigkeit auf eine gut vorbereitete Gesellschaft, was die Folgen deutlich reduziert.",
+      ],
+      chart: {
+        type: "bar",
+        xLabels: ["Japan"],
+        series: [
+          {
+            name: "Erdbeben (Anzahl pro Jahr)",
+            data: [55000],
+            yAxis: "primary",
+          },
+          {
+            name: "Todesopfer (2000–2025)",
+            data: [18384],
+            yAxis: "secondary",
+          },
+        ],
+      },
+    },
+    {
+      title: "Das Land der Hundertjährigen und der Arbeit",
+      paragraphs: [
+        "Japan hat eine der höchsten Lebenserwartungen der Welt. Viele Menschen werden sehr alt und bleiben lange aktiv. Ernährung mit viel Fisch und Gemüse, regelmäßige Vorsorge und Bewegung im Alltag tragen dazu bei. Auch ein gutes Gesundheitssystem und ein hohes Sicherheitsniveau spielen eine Rolle.",
+        "Gleichzeitig ist die Arbeitskultur sehr anspruchsvoll. Pünktlichkeit, Pflichtgefühl und lange Tage im Büro sind in vielen Branchen normal. Karriere und Verantwortung stehen oft an erster Stelle. Viele pendeln weit und verbringen wenig Zeit zu Hause. Unternehmen und Politik fördern zwar mehr Ausgleich, doch Veränderungen brauchen Zeit.",
+        "Die Geburtenrate ist sehr niedrig. Viele Paare verschieben Familiengründungen oder entscheiden sich dagegen, weil Arbeit und Betreuung schwer zu vereinbaren sind. Das führt zu einer schnell alternden Gesellschaft und belastet Arbeitsmarkt und Sozialsysteme. Japan sucht daher Wege, Familie und Beruf besser zusammenzubringen und junge Familien stärker zu unterstützen.",
+      ],
+      chart: {
+        type: "line",
+        xLabels: [
+          "1950",
+          "1955",
+          "1960",
+          "1965",
+          "1970",
+          "1975",
+          "1980",
+          "1985",
+          "1990",
+          "1995",
+          "2000",
+          "2005",
+          "2010",
+          "2015",
+          "2018",
+          "2020",
+          "2021",
+          "2022",
+          "2025",
+          "2030",
+          "2040",
+          "2050",
+        ],
+        series: [
+          {
+            name: "Geburtenrate (Kinder je Frau)",
+            data: [
+              3.62, 2.35, 1.98, 2.09, 2.04, 1.92, 1.74, 1.74, 1.51, 1.41, 1.35,
+              1.25, 1.36, 1.42, 1.3, 1.21, 1.22, 1.23, 1.26, 1.29, 1.31, 1.33,
+            ],
+            yAxis: "primary",
+          },
+          {
+            name: "Anteil 65+ in %",
+            data: [
+              4.9, 5.2, 5.74, 6.3, 7.06, 8.2, 9.07, 10.6, 12.16, 14.0, 17.44,
+              20.5, 23.1, 26.92, 28.0, 29.56, 29.8, 29.9, 29.99, 30.5, 32.7,
+              36.82,
+            ],
+            yAxis: "secondary",
+          },
+        ],
+      },
     },
   ],
 };

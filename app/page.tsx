@@ -1,5 +1,5 @@
-import { ItinerarySection } from "@/components/ItinerarySection";
-import { SplitSection } from "@/components/SplitSection";
+import { ItinerarySection } from "@/components/sections/main/ItinerarySection";
+import { SplitSection } from "@/components/sections/main/SplitSection";
 import { splitSections } from "@/data/split-sections";
 import { cityPins, itineraryStops } from "@/data/itinerary";
 
