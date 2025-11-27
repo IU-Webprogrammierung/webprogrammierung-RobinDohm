@@ -39,3 +39,10 @@ export const people: Person[] = [
     reverseOnMd: true,
   },
 ];
+
+export const banner = {
+  src: "/img/wersindwir/banner.avif",
+  alt: "Robin und Jessi als Brautpaar Hand in Hand in baumbestandener Allee vor einer historischen Location",
+  width: 1150,
+  height: 359,
+};

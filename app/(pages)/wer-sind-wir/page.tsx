@@ -1,5 +1,7 @@
+import { Banner } from "@/components/Banner";
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/sections/wer-sind-wir/AboutSection";
+import { banner } from "@/data/wer-sind-wir";
 
 export default function AboutUs() {
   return (
@@ -17,6 +19,12 @@ export default function AboutUs() {
       <AboutSection />
 
       {/* Banner */}
+      <Banner
+        src={banner.src}
+        alt={banner.alt}
+        width={banner.width}
+        height={banner.height}
+      />
     </main>
   );
 }
