@@ -14,9 +14,10 @@ type ImageRailItem = {
 type ImageRailProps = {
   images: ImageRailItem[];
   className?: string;
+  title?: string;
 };
 
-export function ImageRail({ images, className }: ImageRailProps) {
+export function ImageRail({ images, className, title }: ImageRailProps) {
   // Referenz auf das Scroll-Container-Element
   const stripRef = useRef<HTMLDivElement | null>(null);
 
@@ -176,74 +177,90 @@ export function ImageRail({ images, className }: ImageRailProps) {
   // Wenn es keine Bilder gibt, braucht die Komponente nichts rendern.
   if (!images.length) return null;
 
+  /**
+   * Wrapper:
+   * - Wenn ein Titel vorhanden ist, wird ein <section> verwendet, da es sich dann
+   *   um einen klar definierten thematischen Block handelt.
+   * - Wenn kein Titel angegeben ist, verwenden wir ein <div>, um eine Section ohne
+   *   Überschrift zu vermeiden (das wäre semantisch inkorrekt).
+   * - Hintergrund: Auf der Japan-Seite wird die ImageRail innerhalb einer anderen
+   *   Section eingesetzt ohne Titel. Daher muss der Wrapper dynamisch gewählt werden.
+   */
+  type WrapperTag = "section" | "div";
+  const Wrapper: WrapperTag = title ? "section" : "div";
+
   return (
-    <div
-      className={`
-        flex items-center gap-2 mt-3
-        ${className ?? ""}
-      `}
-      role="region"
-      aria-label="Bildleiste mit horizontal scrollbaren Bildern"
+    <Wrapper
+      className={`mt-3 flex flex-col gap-2 ${className ?? ""}`}
+      aria-label={title ?? "Bildleiste mit horizontal scrollbaren Bildern"}
     >
-      {/* Prev-Button */}
-      <ControlButton
-        direction="prev"
-        onClick={() => scrollByDir(-1)}
-        disabled={!canPrev}
-      />
-
-      {/* Strip - tabIndex={0} sorgt für einen fokusierbaren Container -> Keyboardsteuerung */}
+      {title && <h2>{title}</h2>}
       <div
-        ref={stripRef}
-        tabIndex={0}
-        onKeyDown={handleKeyDown}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onScroll={(e) => updateButtons(e.currentTarget)}
-        className="flex-1 grid grid-flow-col auto-cols-[40%] lg:auto-cols-[30%] gap-2 overflow-x-auto overflow-y-hidden snap-x snap-mandatory pb-1 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden focus:outline-none focus:ring-2 focus:ring-focus rounded-md"
+        className={`
+        flex items-center gap-2
+      `}
+        role="region"
         aria-roledescription="Karussell"
-        aria-label="Bilder mit Links/Rechts scrollen"
       >
-        {images.map((img, index) => (
-          <div
-            key={img.src ?? index}
-            ref={(el) => {
-              itemRefs.current[index] = el;
-            }}
-            tabIndex={-1}
-            className="relative snap-start group overflow-hidden rounded"
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={img.width}
-              height={img.height}
-            />
+        {/* Prev-Button */}
+        <ControlButton
+          direction="prev"
+          onClick={() => scrollByDir(-1)}
+          disabled={!canPrev}
+        />
 
-            {/* Overlay: fährt von unten rein */}
+        {/* Strip - tabIndex={0} sorgt für einen fokusierbaren Container -> Keyboardsteuerung */}
+        <div
+          ref={stripRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onScroll={(e) => updateButtons(e.currentTarget)}
+          className="flex-1 grid grid-flow-col auto-cols-[40%] lg:auto-cols-[30%] gap-2 overflow-x-auto overflow-y-hidden snap-x snap-mandatory pb-1 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden focus:outline-none focus:ring-2 focus:ring-focus rounded-md"
+          aria-label="Bilder mit Links/Rechts scrollen"
+        >
+          {images.map((img, index) => (
             <div
-              className={`pointer-events-none absolute inset-x-0 bottom-0 bg-white/65 px-3 py-2 text-base font-semibold text-text backdrop-blur-[2px] transition-transform duration-200 ${
-                hasFocus && activeIndex === index
-                  ? "translate-y-0"
-                  : "translate-y-full"
-              } ${
-                hasFocus
-                  ? ""
-                  : "group-hover:translate-y-0 group-focus-within:translate-y-0"
-              }`}
+              key={img.src ?? index}
+              ref={(el) => {
+                itemRefs.current[index] = el;
+              }}
+              tabIndex={-1}
+              className="relative snap-start group overflow-hidden rounded"
             >
-              {img.alt}
-            </div>
-          </div>
-        ))}
-      </div>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+              />
 
-      {/* Next-Button */}
-      <ControlButton
-        direction="next"
-        onClick={() => scrollByDir(1)}
-        disabled={!canNext}
-      />
-    </div>
+              {/* Overlay: fährt von unten rein */}
+              <div
+                className={`pointer-events-none absolute inset-x-0 bottom-0 bg-white/65 px-3 py-2 text-base font-semibold text-text backdrop-blur-[2px] transition-transform duration-200 ${
+                  hasFocus && activeIndex === index
+                    ? "translate-y-0"
+                    : "translate-y-full"
+                } ${
+                  hasFocus
+                    ? ""
+                    : "group-hover:translate-y-0 group-focus-within:translate-y-0"
+                }`}
+              >
+                {img.alt}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Next-Button */}
+        <ControlButton
+          direction="next"
+          onClick={() => scrollByDir(1)}
+          disabled={!canNext}
+        />
+      </div>
+    </Wrapper>
   );
 }
