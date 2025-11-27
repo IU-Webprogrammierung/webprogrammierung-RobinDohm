@@ -9,6 +9,7 @@
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
   --shadow-sticky: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+  --shadow-timeline: 0 0 0 3px rgba(200, 29, 37, 0.12);
 }
 
 @theme {
@@ -41,6 +42,7 @@
   --shadow-card: var(--shadow);
   --shadow-card-hover: var(--shadow-hover);
   --shadow-stickynote: var(--shadow-sticky);
+  --shadow-timeline: var(--shadow-timeline);
 }
 
 /* Base styles so Tailwind utilities pick up the tokens */
