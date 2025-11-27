@@ -1,6 +1,7 @@
 import { Banner } from "@/components/Banner";
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/sections/wer-sind-wir/AboutSection";
+import { StorySection } from "@/components/sections/wer-sind-wir/StorySection";
 import { banner } from "@/data/wer-sind-wir";
 
 export default function AboutUs() {
@@ -25,6 +26,9 @@ export default function AboutUs() {
         width={banner.width}
         height={banner.height}
       />
+
+      {/* Unsere Geschichte */}
+      <StorySection />
     </main>
   );
 }

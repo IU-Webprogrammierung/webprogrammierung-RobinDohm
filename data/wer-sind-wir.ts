@@ -1,3 +1,5 @@
+import { TimelineItem } from "@/components/Timeline";
+
 export type Person = {
   name: string;
   image: {
@@ -46,3 +48,34 @@ export const banner = {
   width: 1150,
   height: 359,
 };
+
+export const storyTimeline: TimelineItem[] = [
+  {
+    label: "2019 / Januar",
+    description: "Wir lernen uns online kennen - über Overwatch (Videospiel).",
+  },
+  {
+    label: "2019 / April",
+    description: "Wir sind offiziell ein Paar.",
+  },
+  {
+    label: "2020 / Mai",
+    description: "Jessi zieht zu Robin in den Norden (Nähe Kiel).",
+  },
+  {
+    label: "2021 / Juni",
+    description: "Robin macht Jessi den Antrag. PS: Sie hat „JA“ gesagt!",
+  },
+  {
+    label: "2023 / August",
+    description: "Unsere Hochzeit.",
+  },
+  {
+    label: "2024 / Juli",
+    description: "Flitterwochen sind endlich angesagt: auf nach Japan!",
+  },
+  {
+    label: "Und jetzt",
+    description: "Wir schauen gemeinsam, was die Zukunft bringt.",
+  },
+];
