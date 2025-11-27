@@ -12,6 +12,11 @@ export type Person = {
   reverseOnMd?: boolean;
 };
 
+export type MomentsContent = {
+  heading: string;
+  images: { src: string; alt: string; width: number; height: number }[];
+};
+
 export const people: Person[] = [
   {
     name: "Robin",
@@ -79,3 +84,57 @@ export const storyTimeline: TimelineItem[] = [
     description: "Wir schauen gemeinsam, was die Zukunft bringt.",
   },
 ];
+
+export const momentsContent: MomentsContent = {
+  heading: "Unsere Lieblingsmomente",
+  images: [
+    {
+      src: "/img/wersindwir/moments_01.avif",
+      alt: "Robin und Jessi mit Masken zu Corona auf der DoKomi",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_02.avif",
+      alt: "Jessi mit einem Papagei auf der Schulter",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_03.avif",
+      alt: "Robin und Jessi im Standesamt bei Ihrer Hochzeit",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_04.avif",
+      alt: "Jessi steht mit Kater Merlin im Arm draußen im Schnee",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_05.avif",
+      alt: "Robin und Jessi mit Weihnachtsmütze und Geweih vor einem Fernseher",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_06.avif",
+      alt: "Die Familie zu Weihnachten",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_07.avif",
+      alt: "Robin mit Kater Merlin auf dem Arm",
+      width: 303,
+      height: 220,
+    },
+    {
+      src: "/img/wersindwir/moments_08.avif",
+      alt: "Robin und Kater Kumo arbeiten gemeinsam am Computer",
+      width: 303,
+      height: 220,
+    },
+  ],
+};

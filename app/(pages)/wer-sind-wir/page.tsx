@@ -1,8 +1,9 @@
 import { Banner } from "@/components/Banner";
 import { Hero } from "@/components/Hero";
+import { ImageRail } from "@/components/ImageRail";
 import { AboutSection } from "@/components/sections/wer-sind-wir/AboutSection";
 import { StorySection } from "@/components/sections/wer-sind-wir/StorySection";
-import { banner } from "@/data/wer-sind-wir";
+import { banner, momentsContent } from "@/data/wer-sind-wir";
 
 export default function AboutUs() {
   return (
@@ -29,6 +30,12 @@ export default function AboutUs() {
 
       {/* Unsere Geschichte */}
       <StorySection />
+
+      {/* Unsere Lieblingsmomente */}
+      <ImageRail
+        images={momentsContent.images}
+        title="Unsere Lieblingsmomente"
+      />
     </main>
   );
 }
