@@ -13,13 +13,13 @@ export function PersonBlock({ person }: { person: Person }) {
           person.reverseOnMd ? "md:flex-row-reverse" : "md:flex-row"
         } md:items-center`}
       >
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 justify-items-center">
           <Image
             src={person.image.src}
             alt={person.image.alt}
             width={person.image.width}
             height={person.image.height}
-            className="h-auto w-full rounded border border-line object-cover"
+            className={`h-auto w-max-[${person.image.width}]`}
           />
         </div>
         <div className="w-full md:w-1/2 space-y-3 text-text">
