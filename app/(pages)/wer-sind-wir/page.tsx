@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { AboutSection } from "@/components/sections/wer-sind-wir/AboutSection";
 
 export default function AboutUs() {
   return (
@@ -11,6 +12,11 @@ export default function AboutUs() {
         title="Wer sind wir"
         subtitle="Zwei Abenteurer mit Liebe zu Japan und zueinander. Wir sind Robin und Jessi."
       />
+
+      {/* Über uns */}
+      <AboutSection />
+
+      {/* Banner */}
     </main>
   );
 }
