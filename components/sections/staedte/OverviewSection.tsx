@@ -1,23 +1,21 @@
-// components/CityOverviewSection.tsx
-
 import { StickyNote } from "@/components/StickyNote";
 
-type CityInfoItem = {
+type InfoItem = {
   label: string;
   value: string;
 };
 
-type CityOverviewSectionProps = {
+type OverviewSectionProps = {
   id?: string;
   heading: string;
   paragraphs: string[];
   infoTitle: string;
-  infoItems: CityInfoItem[];
+  infoItems: InfoItem[];
   stickyRotate?: boolean; // steuert Rotation der Sticky Note
   className?: string;
 };
 
-export function CityOverviewSection({
+export function OverviewSection({
   id = "city-overview",
   heading,
   paragraphs,
@@ -25,7 +23,7 @@ export function CityOverviewSection({
   infoItems,
   stickyRotate = true,
   className,
-}: CityOverviewSectionProps) {
+}: OverviewSectionProps) {
   return (
     <section id={id} className={`py-custom text-text ${className ?? ""}`}>
       {/* Titel */}
