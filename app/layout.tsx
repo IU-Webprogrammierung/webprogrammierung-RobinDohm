@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { SakuraOverlay } from "../components/SakuraOverlay";
+import { SkipLink } from "@/components/SkipLink";
 
 const notoSans = localFont({
   src: [
@@ -84,6 +85,7 @@ export default function RootLayout({
     >
       <meta name="apple-mobile-web-app-title" content="JPBlog" />
       <body className="antialiased">
+        <SkipLink />
         <SakuraOverlay />
         <Header />
         {children}

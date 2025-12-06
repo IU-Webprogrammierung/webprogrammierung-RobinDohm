@@ -197,30 +197,6 @@
     padding: 0.2rem 0.4rem;
   }
 
-  .skip-link {
-    position: absolute;
-    left: -9999px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  .skip-link:focus {
-    position: fixed;
-    left: 0.5rem;
-    top: 0.5rem;
-    width: auto;
-    height: auto;
-    padding: 0.5rem 0.75rem;
-    background: #000;
-    color: #fff;
-    border-radius: 0.25rem;
-    z-index: 2000;
-    outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
-  }
-
   :is(.sakura-images, .sakura-layer) {
     position: fixed;
     inset: 0;
