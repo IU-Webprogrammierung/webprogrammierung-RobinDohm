@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/Hero";
 import { citySlugs, getCityBySlug } from "@/data/cities";
+import { CityOverviewSection } from "@/components/sections/staedte/CityOverviewSection";
 
 type CityPageParams = Promise<{ city: string }>;
 
@@ -15,7 +16,7 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
     notFound();
   }
 
-  const { hero } = city;
+  const { hero, overview } = city;
 
   return (
     <main id={city.slug}>
@@ -33,6 +34,13 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
           </>
         }
         subtitle={hero.subtitle}
+      />
+
+      <CityOverviewSection
+        heading={overview.heading}
+        paragraphs={overview.paragraphs}
+        infoTitle={overview.infoTitle}
+        infoItems={overview.infoItems}
       />
     </main>
   );

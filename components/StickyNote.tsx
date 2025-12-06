@@ -14,7 +14,7 @@ export function StickyNote({
 }: StickyNoteProps) {
   return (
     <div
-      className={`bg-sticky text-text font-handwritten shadow-stickynote font-semibold text-center text-xl px-4 py-3 ${
+      className={`bg-sticky text-text font-handwritten shadow-stickynote font-semibold text-center text-2xl md:text-xl px-4 py-3 ${
         rotate ? "rotate-2" : ""
       } ${className}`}
     >
