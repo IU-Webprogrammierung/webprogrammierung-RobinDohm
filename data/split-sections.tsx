@@ -39,6 +39,7 @@ export const splitSections: SplitSectionProps[] = [
       width: 550,
       height: 398,
     },
+    priority: true,
   },
   {
     id: "language",

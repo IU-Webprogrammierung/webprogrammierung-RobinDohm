@@ -53,7 +53,7 @@ export function SplitSection({
         width={image.width}
         height={image.height}
         loading={priority ? "eager" : "lazy"}
-        priority={priority}
+        fetchPriority={priority ? "high" : "low"}
         decoding="async"
       />
     </section>

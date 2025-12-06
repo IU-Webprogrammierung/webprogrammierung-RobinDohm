@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 type HeroProps = {
@@ -28,7 +26,9 @@ export function Hero({
         alt={imageAlt}
         width={imageSize.width}
         height={imageSize.height}
-        priority
+        preload
+        fetchPriority="high"
+        sizes="100vw"
         className="block h-[calc(100dvh-65px)] object-cover border-0 bg-transparent shadow-none"
       />
 
