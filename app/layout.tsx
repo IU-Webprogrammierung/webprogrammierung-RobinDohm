@@ -45,7 +45,7 @@ const notoSerif = localFont({
 const yujiBoku = localFont({
   src: [
     {
-      path: "../public/fonts/Yuji_Boku/YujiBoku-Regular.woff2",
+      path: "../public/fonts/Yuji_Boku/YujiBoku-Subset.woff2",
       weight: "400",
       style: "normal",
     },
