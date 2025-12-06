@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/Hero";
 import { citySlugs, getCityBySlug } from "@/data/cities";
-import { CityOverviewSection } from "@/components/sections/staedte/CityOverviewSection";
+import { OverviewSection } from "@/components/sections/staedte/OverviewSection";
+import { ExperiencesSection } from "@/components/sections/staedte/ExperiencesSection";
 
 type CityPageParams = Promise<{ city: string }>;
 
@@ -16,11 +17,13 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
     notFound();
   }
 
-  const { hero, overview } = city;
+  const { hero, overview, experience } = city;
 
   return (
     <main id={city.slug}>
       <div id="main" tabIndex={-1} />
+
+      {/* Hero */}
       <Hero
         imageSrc={hero.imageSrc}
         imageAlt={hero.imageAlt}
@@ -36,12 +39,21 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
         subtitle={hero.subtitle}
       />
 
-      <CityOverviewSection
+      {/* Übersicht */}
+      <OverviewSection
         heading={overview.heading}
         paragraphs={overview.paragraphs}
         infoTitle={overview.infoTitle}
         infoItems={overview.infoItems}
       />
+
+      {/* Erlebnisse (Tagesweise) */}
+      <ExperiencesSection
+        heading={experience.title}
+        experiences={experience.experiences}
+      />
+
+      {/* Weitere Bilder */}
     </main>
   );
 }

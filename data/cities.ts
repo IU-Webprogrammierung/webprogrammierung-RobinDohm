@@ -14,10 +14,30 @@ export type CityOverview = {
   infoItems: { label: string; value: string }[];
 };
 
+export type ExperienceImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type Experience = {
+  title: string;
+  paragraphs: string[];
+  imageDesktop: ExperienceImage;
+  imageMobile: ExperienceImage;
+};
+
+export type CityExperience = {
+  title: string;
+  experiences: Experience[];
+};
+
 export type CityContent = {
   slug: string;
   hero: CityHero;
   overview: CityOverview;
+  experience: CityExperience;
 };
 
 export const cities: CityContent[] = [
@@ -44,6 +64,91 @@ export const cities: CityContent[] = [
         { label: "Präfektur", value: "Tokyo-to" },
         { label: "Bekannt für", value: "Technik, Mode, Popkultur" },
         { label: "Besonderheiten", value: "Die größte Stadt der Welt" },
+      ],
+    },
+    experience: {
+      title: "Unsere Erlebnisse",
+      experiences: [
+        {
+          title: "Tag 1 - Ankunft & erster Eindruck",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_1.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_1_mobile.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Nach einem 15-stündigem Flug kamen wir am 04.07.24 um 13 Uhr (Ortszeit) am Narita Flughafen in Tokyo an. Nachdem wir unser Gepäck in Empfang genommen hatten, kümmerten wir uns um den Umtausch von Euro zu Yen. Anschließend, haben wir uns Tickets für einen Bus in Richtung unseres ersten Hotels gekauft.",
+            "Dort angekommen, atmeten wir nach unserem langen Flug etwas auf und machten uns frisch. Der Unterschied des Klimas von Deutschland zu Japan war stark zu spüren. Mit einer Tageshöchsttemperatur von 38°C und einer Luftfeuchtigkeit von 80%, war dieser Sommer der heißeste Sommer, den Japan bis zu diesem Zeitpunkt erlebt hatte. Eine kurze Dusche und das Ausprobieren der kuriosen japanischen Toiletten war also ein Muss. Danach erkundeten wir die Umgebung unseres Hotels.",
+            "So bekamen wir direkt am ersten Abend einen guten Eindruck von Tokyos blühendem Nachtleben. Angestellte, welche sich noch mit Kollegen auf ein Feierabendbier oder Abendessen in einem der vielen Restaurants trafen. Unser Abendessen nahmen wir in dem kleinen Restaurant unseres Hotels ein. Nach der langen Reise nach Tokyo und einem aufregenden Tag fielen wir wie Steine ins Bett.",
+          ],
+        },
+        {
+          title: "Tag 2 - Ein Besuch im Skytree",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_2.avif",
+            alt: "Pokémon Dekoration im Tokyo Skytree",
+            width: 380,
+            height: 285,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_2_mobile.avif",
+            alt: "Pokémon Dekoration im Tokyo Skytree",
+            width: 540,
+            height: 405,
+          },
+          paragraphs: [
+            "Der nächste Tag begann mit einem Frühstück, welches aus Onigiri (Reisbällchen) und Limonade aus dem 7-Eleven gegenüber unseres Hotels bestand. Da der Tokyo Skytree nur einen Steinwurf von unserem Hotel entfernt war, stand er für unseren 2. Tag ganz oben auf der To-Do Liste.",
+            "Dort angekommen fährt man mit einem Fahrstuhl bis nach ganz oben auf die Aussichtsplattformen. Der Ausblick vom höchsten Punkt ist wirklich einmalig und trotz der Höhe und einer klaren Aussicht, ist der Rand der Stadt nicht zu sehen. Doch der Skytree hat nicht nur seine Aussicht zu bieten. Auch ein kleines Restaurant und Deko mit Fotopoints zum Thema Pokémon waren den Besuch wert. Für ganz Mutige gibt es sogar einen Glasfußboden. Diesen haben wir jedoch aufgrund der Höhenangst von Jessi nicht betreten.",
+            "Den Skytree umgebend erstreckt sich eine kleine Einkaufsmeile mit vielen kleinen Geschäften. Dabei haben wir einen super Shop für Studio Ghibli Fans gefunden. Später am Tag haben wir uns an Tokyos Metro System herangewagt und sind nach Akihabara gefahren. Dort besichtigten wir einen sehr beliebten Laden: Don Quijote. Es lässt sich dort alles mögliche finden und kaufen. Von 50 Sorten KitKat und andern Snacks bis zu Kleidung und Fan-Artikeln ist alles dabei. Unser Abend endete wie er begonnen hatte, mit einem leckeren Abendessen aus dem Kombini.",
+          ],
+        },
+        {
+          title: "Tag 3 - Unser Ausflug zum Kawaguchi-See",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_3.avif",
+            alt: "Ein Blick durch ein Torii auf einen Tempel",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_3_mobile.avif",
+            alt: "Ein Blick durch ein Torii auf einen Tempel",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Für den 3. Tag stand eine Tages-Tour zum Kawaguchi-See auf dem Plan. Ursprünglich hatten wir eine Gruppen-Tour gebucht. Dafür sollten wir erst zur Tokyo-Station kommen, um dort in einen Reisebus zu steigen. Doch wir hatten Glück und wir waren an diesem Tag die einzigen Leute für diese Tour.",
+            "Also holte uns unser Guide direkt am Hotel mit einem Auto ab. Wir bekamen also eine Privat-Tour. Zu Beginn wurden wir an einem kleinen Park abgesetzt, von welchem aus man den Mount Fuji sehr schön im Blick hatte, ohne große Menschenmassen überblicken zu müssen. Auch konnte man im Park die Schreine der 7 Glücksgötter Japans besichtigen. Diese waren überall am Wegrand verteil. Als nächstes ging es in einen kleinen Garten in der Nähe des Sees. Das selbstgemachte Softeis, dass man dort bekommen konnte war sensationell lecker.",
+            "Danach fragte uns unser Guide ob er uns abseits der geplanten Route seinen Lieblingsort zeigen dürfte, was wir natürlich bejahten. Dies war der Kitaguchi Hongu Fuji Sengen Schrein. Dieser hat uns sehr beeindruckt und ist zu einem unserer Lieblingserlebnisse geworden. Zum Abschluss unseres Tagesausflugs ging es zum Kagamiike-Teich. Dies ist ein Weltkulturerbe, denn in dem Teich spiegelt sich der heilige Berg: Mount Fuji.",
+          ],
+        },
+        {
+          title: "Tag 4 - Shopping, wir kommen!",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_4.avif",
+            alt: "Ein ruhigerer Einkaufsstraßenzug in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_4_mobile.avif",
+            alt: "Ein ruhigerer Einkaufsstraßenzug in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Tag 4 war ein reiner Shopping-Tag im Ginza-Viertel. Hier konnten wir uns in sehr vielen, nahe beieinander stehenden, Kaufhäusern umschauen. Von Pokémon-Center bis Uniqlo war alles dabei.",
+            "Kleidung kaufen in Japan ist jedoch gar nicht so einfach, denn die Kleidergrößen stimmen nicht mit den uns bekannten Größen überein. Als Beispiel: eine japanische Größe M ist sehr viel kleiner als eine deutsche Größe M. Ein paar Souvenirs besorgten wir auch an diesem Tag. Zum Beispiel einen erlesenen japanischen Whiskey für einen Kenner aus der Familie.",
+            "Ein reiner Shopping-Tag war für uns eine willkommene Abwechselung. Denn gegen die drückende Hitze waren die Klimatisierten Shopping-Center eine wahre Wohltat. Mit einem Einkaufsbummel kamen wir jedoch auch an diesem Tag auf eine ordentliche Schrittzahl.",
+          ],
+        },
       ],
     },
   },
@@ -78,6 +183,31 @@ export const cities: CityContent[] = [
         },
       ],
     },
+    experience: {
+      title: "Unsere Erlebnisse",
+      experiences: [
+        {
+          title: "Tag 1 - Ankunft & erster Eindruck",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_1.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_1_mobile.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Nach einem 15-stündigem Flug kamen wir am 04.07.24 um 13 Uhr (Ortszeit) am Narita Flughafen in Tokyo an. Nachdem wir unser Gepäck in Empfang genommen hatten, kümmerten wir uns um den Umtausch von Euro zu Yen. Anschließend, haben wir uns Tickets für einen Bus in Richtung unseres ersten Hotels gekauft.",
+            "Dort angekommen, atmeten wir nach unserem langen Flug etwas auf und machten uns frisch. Der Unterschied des Klimas von Deutschland zu Japan war stark zu spüren. Mit einer Tageshöchsttemperatur von 38°C und einer Luftfeuchtigkeit von 80%, war dieser Sommer der heißeste Sommer, den Japan bis zu diesem Zeitpunkt erlebt hatte. Eine kurze Dusche und das Ausprobieren der kuriosen japanischen Toiletten war also ein Muss. Danach erkundeten wir die Umgebung unseres Hotels.",
+            "So bekamen wir direkt am ersten Abend einen guten Eindruck von Tokyos blühendem Nachtleben. Angestellte, welche sich noch mit Kollegen auf ein Feierabendbier oder Abendessen in einem der vielen Restaurants trafen. Unser Abendessen nahmen wir in dem kleinen Restaurant unseres Hotels ein. Nach der langen Reise nach Tokyo und einem aufregenden Tag fielen wir wie Steine ins Bett.",
+          ],
+        },
+      ],
+    },
   },
   {
     slug: "kyoto",
@@ -105,6 +235,31 @@ export const cities: CityContent[] = [
           value: "Tempel, Schreine, traditionelle Kultur",
         },
         { label: "Besonderheiten", value: "ehemalige Kaiserstadt Japans" },
+      ],
+    },
+    experience: {
+      title: "Unsere Erlebnisse",
+      experiences: [
+        {
+          title: "Tag 1 - Ankunft & erster Eindruck",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_1.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_1_mobile.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Nach einem 15-stündigem Flug kamen wir am 04.07.24 um 13 Uhr (Ortszeit) am Narita Flughafen in Tokyo an. Nachdem wir unser Gepäck in Empfang genommen hatten, kümmerten wir uns um den Umtausch von Euro zu Yen. Anschließend, haben wir uns Tickets für einen Bus in Richtung unseres ersten Hotels gekauft.",
+            "Dort angekommen, atmeten wir nach unserem langen Flug etwas auf und machten uns frisch. Der Unterschied des Klimas von Deutschland zu Japan war stark zu spüren. Mit einer Tageshöchsttemperatur von 38°C und einer Luftfeuchtigkeit von 80%, war dieser Sommer der heißeste Sommer, den Japan bis zu diesem Zeitpunkt erlebt hatte. Eine kurze Dusche und das Ausprobieren der kuriosen japanischen Toiletten war also ein Muss. Danach erkundeten wir die Umgebung unseres Hotels.",
+            "So bekamen wir direkt am ersten Abend einen guten Eindruck von Tokyos blühendem Nachtleben. Angestellte, welche sich noch mit Kollegen auf ein Feierabendbier oder Abendessen in einem der vielen Restaurants trafen. Unser Abendessen nahmen wir in dem kleinen Restaurant unseres Hotels ein. Nach der langen Reise nach Tokyo und einem aufregenden Tag fielen wir wie Steine ins Bett.",
+          ],
+        },
       ],
     },
   },
@@ -138,6 +293,31 @@ export const cities: CityContent[] = [
         },
       ],
     },
+    experience: {
+      title: "Unsere Erlebnisse",
+      experiences: [
+        {
+          title: "Tag 1 - Ankunft & erster Eindruck",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_1.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_1_mobile.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Nach einem 15-stündigem Flug kamen wir am 04.07.24 um 13 Uhr (Ortszeit) am Narita Flughafen in Tokyo an. Nachdem wir unser Gepäck in Empfang genommen hatten, kümmerten wir uns um den Umtausch von Euro zu Yen. Anschließend, haben wir uns Tickets für einen Bus in Richtung unseres ersten Hotels gekauft.",
+            "Dort angekommen, atmeten wir nach unserem langen Flug etwas auf und machten uns frisch. Der Unterschied des Klimas von Deutschland zu Japan war stark zu spüren. Mit einer Tageshöchsttemperatur von 38°C und einer Luftfeuchtigkeit von 80%, war dieser Sommer der heißeste Sommer, den Japan bis zu diesem Zeitpunkt erlebt hatte. Eine kurze Dusche und das Ausprobieren der kuriosen japanischen Toiletten war also ein Muss. Danach erkundeten wir die Umgebung unseres Hotels.",
+            "So bekamen wir direkt am ersten Abend einen guten Eindruck von Tokyos blühendem Nachtleben. Angestellte, welche sich noch mit Kollegen auf ein Feierabendbier oder Abendessen in einem der vielen Restaurants trafen. Unser Abendessen nahmen wir in dem kleinen Restaurant unseres Hotels ein. Nach der langen Reise nach Tokyo und einem aufregenden Tag fielen wir wie Steine ins Bett.",
+          ],
+        },
+      ],
+    },
   },
   {
     slug: "hiroshima",
@@ -167,6 +347,31 @@ export const cities: CityContent[] = [
         {
           label: "Besonderheiten",
           value: "Symbolstadt für Frieden und Wiederaufbau",
+        },
+      ],
+    },
+    experience: {
+      title: "Unsere Erlebnisse",
+      experiences: [
+        {
+          title: "Tag 1 - Ankunft & erster Eindruck",
+          imageDesktop: {
+            src: "/img/staedte/tokyo/day_1.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 380,
+            height: 330,
+          },
+          imageMobile: {
+            src: "/img/staedte/tokyo/day_1_mobile.avif",
+            alt: "Pokémon Themed Getränkeautomat in Tokyo",
+            width: 540,
+            height: 620,
+          },
+          paragraphs: [
+            "Nach einem 15-stündigem Flug kamen wir am 04.07.24 um 13 Uhr (Ortszeit) am Narita Flughafen in Tokyo an. Nachdem wir unser Gepäck in Empfang genommen hatten, kümmerten wir uns um den Umtausch von Euro zu Yen. Anschließend, haben wir uns Tickets für einen Bus in Richtung unseres ersten Hotels gekauft.",
+            "Dort angekommen, atmeten wir nach unserem langen Flug etwas auf und machten uns frisch. Der Unterschied des Klimas von Deutschland zu Japan war stark zu spüren. Mit einer Tageshöchsttemperatur von 38°C und einer Luftfeuchtigkeit von 80%, war dieser Sommer der heißeste Sommer, den Japan bis zu diesem Zeitpunkt erlebt hatte. Eine kurze Dusche und das Ausprobieren der kuriosen japanischen Toiletten war also ein Muss. Danach erkundeten wir die Umgebung unseres Hotels.",
+            "So bekamen wir direkt am ersten Abend einen guten Eindruck von Tokyos blühendem Nachtleben. Angestellte, welche sich noch mit Kollegen auf ein Feierabendbier oder Abendessen in einem der vielen Restaurants trafen. Unser Abendessen nahmen wir in dem kleinen Restaurant unseres Hotels ein. Nach der langen Reise nach Tokyo und einem aufregenden Tag fielen wir wie Steine ins Bett.",
+          ],
         },
       ],
     },
