@@ -14,7 +14,7 @@ export type CityOverview = {
   infoItems: { label: string; value: string }[];
 };
 
-export type ExperienceImage = {
+export type Image = {
   src: string;
   alt: string;
   width: number;
@@ -24,8 +24,8 @@ export type ExperienceImage = {
 export type Experience = {
   title: string;
   paragraphs: string[];
-  imageDesktop: ExperienceImage;
-  imageMobile: ExperienceImage;
+  imageDesktop: Image;
+  imageMobile: Image;
 };
 
 export type CityExperience = {
@@ -33,11 +33,17 @@ export type CityExperience = {
   experiences: Experience[];
 };
 
+export type CityImages = {
+  title: string;
+  images: Image[];
+};
+
 export type CityContent = {
   slug: string;
   hero: CityHero;
   overview: CityOverview;
   experience: CityExperience;
+  images: CityImages;
 };
 
 export const cities: CityContent[] = [
@@ -151,6 +157,41 @@ export const cities: CityContent[] = [
         },
       ],
     },
+    images: {
+      title: "Weitere Bilder aus Tokyo",
+      images: [
+        {
+          src: "/img/staedte/tokyo/gallery_1.avif",
+          alt: "Onigiri und Melonen Limonade aus dem 7-Eleven",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/tokyo/gallery_2.avif",
+          alt: "Totoro Figur im Ghibli Shop",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/tokyo/gallery_3.avif",
+          alt: "Viele verschiedene KitKat Sorten",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/tokyo/gallery_4.avif",
+          alt: "Der heilige Mount Fuji am Kawaguchi-See",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/tokyo/gallery_5.avif",
+          alt: "Ein Schrein des Kitaguchi Hongu Fuji Sengen Schreins",
+          width: 391,
+          height: 220,
+        },
+      ],
+    },
   },
   {
     slug: "osaka",
@@ -245,6 +286,41 @@ export const cities: CityContent[] = [
             "Da wir am Vortag nicht viel Zeit für den Shinsekai Markt gehabt haben, versuchten wir an diesem Tag das Ende zu erreichen. Wir gingen an sehr vielen Geschäften vorbei, aber nach einiger Zeit und schmerzenden Füßen beschlossen wir, den Rückweg anzutreten. Da dies unser letzter Tag in Japan war und wir am nächsten Tag mit dem Flugzeug wieder in die Heimat flogen, sortierten wir im Hotel all unsere gesammelten Souvenirs. Am Ende konnten wir einen ganzen Koffer alleine nur mit Mitbringseln füllen.",
             "Den Rest des Abends verbrachten wir mit der Vorbereitung für unseren Rückflug von Osaka nach Tokyo und von Tokyo über Abudabi nach München. Dazu haben wir unsere Koffer noch einmal umsortiert, damit wir beide circa gleich schwere Koffer hatten. Haben alle Kassenbons für den Zoll vorbereitet und sind anschließend sehr zeitnahe ins Bett gegangen um fit für unsere lange lange Heimreise zu sein.",
           ],
+        },
+      ],
+    },
+    images: {
+      title: "Weitere Bilder aus Osaka",
+      images: [
+        {
+          src: "/img/staedte/osaka/gallery_1.avif",
+          alt: "Eine belebte Straße in der nähe unseres Hotels in Osaka",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/osaka/gallery_2.avif",
+          alt: "Der Tsūtenkaku bei Nacht aus unserem Hotelzimmer zu sehen",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/osaka/gallery_3.avif",
+          alt: "Ein geheimer Eingang zu einem sehr leckeren Restaurant",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/osaka/gallery_4.avif",
+          alt: "Ein alter Schrein mitten in der belebten Stadt",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/osaka/gallery_5.avif",
+          alt: "Der Eingang vom Pokémon-Center in Osaka",
+          width: 391,
+          height: 220,
         },
       ],
     },
@@ -362,6 +438,41 @@ export const cities: CityContent[] = [
         },
       ],
     },
+    images: {
+      title: "Weitere Bilder aus Kyoto",
+      images: [
+        {
+          src: "/img/staedte/kyoto/gallery_1.avif",
+          alt: "Der Eingang vom Nintendo Store in Kyoto",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kyoto/gallery_2.avif",
+          alt: "Eis mit Bohnenpaste als Dekoration in Form von Blumen",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kyoto/gallery_3.avif",
+          alt: "Der große Ginko-Baum in Kyoto",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kyoto/gallery_4.avif",
+          alt: "Eine Pikachu Figur im Pokémon-Center in Kyoto",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kyoto/gallery_5.avif",
+          alt: "Ein All-You-Can-Eat Wagyu Grill",
+          width: 391,
+          height: 220,
+        },
+      ],
+    },
   },
   {
     slug: "kanazawa",
@@ -435,6 +546,41 @@ export const cities: CityContent[] = [
             "Mitten im Park stand ein kleines Teehaus. Wir haben uns hinein gesetzt und eine Schale kalten Matcha-Tee genossen mit einer dazugehörigen Tee-Süßigkeit. In einem Teehaus zieht man zuerst die Schuhe aus. Danach geht man in einen großen Raum, in dem man sich entweder auf eine der Tatami-Matten setzt oder sich eine der Bänke aussucht. Als nächstes wird der Tee serviert und im Anschluss die Tee-Süßigkeit. Der Tee wird traditionell in 3 Zügen ausgetrunken. Die Teesüßigkeit wird mit einem Holzstäbchen zerteilt und dazu gegessen. Während des Aufenthalts in dem Teehaus herrscht Ruhe. Während unseres Besuchs dort hatten wir einen wundervollen Ausblick auf den anliegenden Garten.",
             "Kanazawa ist zudem die Stadt des Blattgoldes. An jeder Ecke gibt es verschiedene Waren, welche mit Blattgold verziert sind, zu kaufen. Wir haben das Softeis mit Blattgold ausprobiert. Nur das Eis macht den Geschmack aus, jedoch war es für uns eine lustige Erfahrung. Abschließend bummelten wir noch ein wenig durch die Stadt für ein wenig Shopping und das Pokémon-Center.",
           ],
+        },
+      ],
+    },
+    images: {
+      title: "Weitere Bilder aus Kanazawa",
+      images: [
+        {
+          src: "/img/staedte/kanazawa/gallery_1.avif",
+          alt: "Kanazawa Castle bei Nacht",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kanazawa/gallery_2.avif",
+          alt: "Eine kleine Seitengassen bei Nacht, die zu einem Tempel führt",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kanazawa/gallery_3.avif",
+          alt: "Oyama Schrein - Ost Shin-mon Tor",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kanazawa/gallery_4.avif",
+          alt: "Ein traditionelles Teehaus im Garten der Kanazawa Castle",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/kanazawa/gallery_5.avif",
+          alt: "Softeis mit ein wenig Blattgold",
+          width: 391,
+          height: 220,
         },
       ],
     },
@@ -532,6 +678,35 @@ export const cities: CityContent[] = [
             "Während Jessi schlief um sich zu erholen, hat sich Robin mit den Souvinirs beschäftigt die wir beiden bis zu dem Zeitpunkt gekauft hatten. Auch einige japanische TV-Shows wurden sich angesehen und diese sind für europäische Verhältnisse sehr verrückt gewesen.",
             "Das Highlight des Tages, trotz Krankheit, waren jedoch die japanischen Werbungen, welche mit einer massiven Übertriebenheit Produkte präsentieren, dass wir uns zwischenzeitlich vor lachen kaum halten konnten. Abends gingen wir noch schnell zum Kombini um die Ecke, um ein Abendessen für uns im Hotelzimmer zu organisieren.",
           ],
+        },
+      ],
+    },
+    images: {
+      title: "Weitere Bilder aus Hiroshima",
+      images: [
+        {
+          src: "/img/staedte/hiroshima/gallery_1.avif",
+          alt: "Das Children's Peace Monument",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/hiroshima/gallery_2.avif",
+          alt: "Ein Infoboard über den Atomic Bomb Dome",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/hiroshima/gallery_3.avif",
+          alt: "Der Clock Tower of Peace",
+          width: 391,
+          height: 220,
+        },
+        {
+          src: "/img/staedte/hiroshima/gallery_4.avif",
+          alt: "Okonomiaki mit Eiertopping",
+          width: 391,
+          height: 220,
         },
       ],
     },

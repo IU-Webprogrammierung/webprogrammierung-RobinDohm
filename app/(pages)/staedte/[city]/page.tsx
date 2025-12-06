@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { citySlugs, getCityBySlug } from "@/data/cities";
 import { OverviewSection } from "@/components/sections/staedte/OverviewSection";
 import { ExperiencesSection } from "@/components/sections/staedte/ExperiencesSection";
+import { ImageRail } from "@/components/ImageRail";
 
 type CityPageParams = Promise<{ city: string }>;
 
@@ -17,7 +18,7 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
     notFound();
   }
 
-  const { hero, overview, experience } = city;
+  const { hero, overview, experience, images } = city;
 
   return (
     <main id={city.slug}>
@@ -54,6 +55,7 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
       />
 
       {/* Weitere Bilder */}
+      <ImageRail title={images.title} images={images.images} />
     </main>
   );
 }
