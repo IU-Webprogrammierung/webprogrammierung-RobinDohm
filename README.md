@@ -71,9 +71,9 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 
 ### Phase 3 – Next.js Portierung & Optimierung
 
-- [ ] Projekt nach **Next.js 16+** migriert (App-Router)
-- [ ] Styling mit **TailwindCSS** implementiert
-- [ ] Komponentenbasierte Aufteilung (Navigation, Footer, Layouts)
+- [x] Projekt nach **Next.js 16+** migriert (App-Router)
+- [x] Styling mit **TailwindCSS** implementiert
+- [x] Komponentenbasierte Aufteilung (Navigation, Footer, Layouts)
 - [ ] SEO-Optimierung (Meta-Tags, Open Graph, saubere URLs)
 - [ ] Erneutes Performance-Audit (Lighthouse > 90 in allen Kategorien)
 - [ ] WCAG 2.1 AA & WAI-ARIA erneut überprüft
