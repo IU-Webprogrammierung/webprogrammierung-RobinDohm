@@ -19,7 +19,7 @@ async function main() {
   console.log("Schreibe Subset-Font nach:", OUTPUT);
   await writeFile(OUTPUT, subsetBuffer);
 
-  console.log("Fertig ✅");
+  console.log("Fertig");
 }
 
 main().catch((err) => {

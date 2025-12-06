@@ -75,7 +75,7 @@ Ein **Reisebericht** mit Landeskunde, Städten und persönlichen Momenten. Diese
 - [x] Styling mit **TailwindCSS** implementiert
 - [x] Komponentenbasierte Aufteilung (Navigation, Footer, Layouts)
 - [ ] SEO-Optimierung (Meta-Tags, Open Graph, saubere URLs)
-- [ ] Erneutes Performance-Audit (Lighthouse > 90 in allen Kategorien)
+- [x] Erneutes Performance-Audit (Lighthouse > 90 in allen Kategorien)
 - [ ] WCAG 2.1 AA & WAI-ARIA erneut überprüft
 - [ ] Finales README mit Deployment-Hinweis und Screenshots ergänzt
 
@@ -162,6 +162,7 @@ Diese Projektarbeit entstand durch eigenständiges Lernen aus verschiedenen offe
 - 🪶 [CSS Tricks](https://css-tricks.com/) - Inspirationen zu Layout-Mustern (Flexbox/Grid)
 - 💨 [TailwindCSS](https://tailwindcss.com/) - Dokumentation & Utility-First-Konzept für Phase 3
 - ⚛️ [Next.js](https://nextjs.org/docs) - offizielle Dokumentation für Routing, Rendering und Performance-Optimierung
+- 📝 [Conventional Commit Messages](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13) - Leitbild für Commit Messages
 
 ### 📘 Fachliteratur
 
