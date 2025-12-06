@@ -39,27 +39,27 @@ export const itineraryStops = [
 export const cityPins = [
   {
     name: "Tokyo",
-    href: "/legacy/pages/staedte/tokyo.html",
+    href: "/staedte/tokyo",
     position: { x: "65%", y: "68%" },
   },
   {
     name: "Kanazawa",
-    href: "/legacy/pages/staedte/kanazawa.html",
+    href: "/staedte/kanazawa",
     position: { x: "46%", y: "62%" },
   },
   {
     name: "Kyoto",
-    href: "/legacy/pages/staedte/kyoto.html",
+    href: "/staedte/kyoto",
     position: { x: "42%", y: "70%" },
   },
   {
     name: "Osaka",
-    href: "/legacy/pages/staedte/osaka.html",
+    href: "/staedte/osaka",
     position: { x: "40%", y: "73%" },
   },
   {
     name: "Hiroshima",
-    href: "/legacy/pages/staedte/hiroshima.html",
+    href: "/staedte/hiroshima",
     position: { x: "22%", y: "75%" },
   },
 ] as const;
