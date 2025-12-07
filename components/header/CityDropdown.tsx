@@ -18,6 +18,8 @@ export function CityDropdown({
   closeCity,
   isActive,
 }: Props) {
+  const menuId = "city-menu";
+
   return (
     <details className="relative" open={cityOpen}>
       <summary
@@ -25,6 +27,8 @@ export function CityDropdown({
           cityActive ? activeClasses : ""
         }`}
         aria-haspopup="true"
+        aria-expanded={cityOpen}
+        aria-controls={menuId}
         onClick={(e) => {
           e.preventDefault();
           toggleCity();
@@ -33,7 +37,10 @@ export function CityDropdown({
         Städte
         <ChevronDown />
       </summary>
-      <ul className="absolute left-0 top-full z-20 mt-2 min-w-32 rounded-md border border-line bg-surface p-2 shadow-lg">
+      <ul
+        id={menuId}
+        className="absolute left-0 top-full z-20 mt-2 min-w-32 rounded-md border border-line bg-surface p-2 shadow-lg"
+      >
         {cityLinks.map((city) => (
           <li key={city.href}>
             <Link
