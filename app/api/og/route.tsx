@@ -20,10 +20,19 @@ const COLORS = {
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
 
-  const title = searchParams.get("title")?.slice(0, 80) ?? "Japan Reiseblog";
-  const subtitle =
-    searchParams.get("subtitle")?.slice(0, 120) ??
-    "Die Eindrücke eines Paares bei Ihrer Reise durch Japan.";
+  // Gegen kopierte URLs, in denen "&" als "&amp;" geschrieben wird
+  const getParam = (name: string, max: number, fallback: string) => {
+    const value =
+      searchParams.get(name) ?? searchParams.get(`amp;${name}`) ?? fallback;
+    return value.slice(0, max);
+  };
+
+  const title = getParam("title", 80, "Japan Reiseblog");
+  const subtitle = getParam(
+    "subtitle",
+    120,
+    "Die Eindrücke eines Paares bei Ihrer Reise durch Japan."
+  );
 
   const notoSans = await fetch(
     new URL("/fonts/Noto_Sans/NotoSans-Bold.ttf", req.url)
