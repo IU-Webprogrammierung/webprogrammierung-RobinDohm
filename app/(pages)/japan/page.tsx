@@ -3,11 +3,19 @@ import { RisksSection } from "@/components/sections/japan/RisksSection";
 import { FoodSection } from "@/components/sections/japan/FoodSection";
 import { CultureSection } from "@/components/sections/japan/CultureSection";
 import { GeoSection } from "@/components/sections/japan/GeoSection";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Japan - Zwischen Tradition und Hightech",
+  description:
+    "Geografie, Kultur, Essen und Herausforderungen in Japan: unser Blick auf ein Land voller Gegensätze.",
+  subtitle: "Eine Übersicht über Japans Vielfalt.",
+  path: "/japan",
+});
 
 export default function Japan() {
   return (
     <main id="main" data-page="japan" tabIndex={-1}>
-
       <Hero
         imageSrc="/img/japan/hero.avif"
         imageAlt="Japanische Landschaft mit Bergen"

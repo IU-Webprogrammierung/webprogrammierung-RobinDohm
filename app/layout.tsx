@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { SakuraOverlay } from "../components/SakuraOverlay";
 import { SkipLink } from "@/components/SkipLink";
+import { buildMetadata } from "@/lib/seo";
 
 const notoSans = localFont({
   src: [
@@ -68,10 +69,12 @@ const caveat = localFont({
   fallback: ["cursive"],
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Japan Reisebericht",
-  description: "ToDo: Anpassen",
-};
+  description: "Ein Reiseblog über unsere Flitterwochen durch Japan.",
+  subtitle: "Tokyo, Kyoto, Hiroshima und mehr aus erster Hand.",
+  path: "/",
+});
 
 export default function RootLayout({
   children,

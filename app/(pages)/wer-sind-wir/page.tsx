@@ -4,6 +4,15 @@ import { ImageRail } from "@/components/ImageRail";
 import { AboutSection } from "@/components/sections/wer-sind-wir/AboutSection";
 import { StorySection } from "@/components/sections/wer-sind-wir/StorySection";
 import { banner, momentsContent } from "@/data/wer-sind-wir";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Wer sind wir - Japan Reisebericht",
+  description:
+    "Lerne Robin und Jessi kennen, ihre gemeinsame Geschichte und warum Japan ihr Herzensziel ist.",
+  subtitle: "Ihre Reiseleiter und ihre besonderen Momente.",
+  path: "/wer-sind-wir",
+});
 
 export default function AboutUs() {
   return (

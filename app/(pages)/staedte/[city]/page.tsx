@@ -4,11 +4,25 @@ import { citySlugs, getCityBySlug } from "@/data/cities";
 import { OverviewSection } from "@/components/sections/staedte/OverviewSection";
 import { ExperiencesSection } from "@/components/sections/staedte/ExperiencesSection";
 import { ImageRail } from "@/components/ImageRail";
+import { buildMetadata } from "@/lib/seo";
 
 type CityPageParams = Promise<{ city: string }>;
 
 export function generateStaticParams() {
   return citySlugs.map((city) => ({ city }));
+}
+
+export async function generateMetadata({ params }: { params: CityPageParams }) {
+  const { city: citySlug } = await params;
+  const city = getCityBySlug(citySlug);
+  if (!city) return {};
+
+  return buildMetadata({
+    title: `${city.hero.title} - Japan Reisebericht`,
+    description: city.hero.subtitle,
+    subtitle: city.overview.heading,
+    path: `/staedte/${city.slug}`,
+  });
 }
 
 export default async function CityPage({ params }: { params: CityPageParams }) {

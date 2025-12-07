@@ -2,6 +2,15 @@ import { ItinerarySection } from "@/components/sections/main/ItinerarySection";
 import { SplitSection } from "@/components/sections/main/SplitSection";
 import { splitSections } from "@/data/split-sections";
 import { cityPins, itineraryStops } from "@/data/itinerary";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Startseite - Japan Reisebericht",
+  description:
+    "Begleite uns auf unserer Route durch Japan: 16 Tage, Shinkansen, Tempel und moderne Metropolen.",
+  subtitle: "Unsere Highlights von Tokyo bis Osaka.",
+  path: "/",
+});
 
 export default function Home() {
   return (
