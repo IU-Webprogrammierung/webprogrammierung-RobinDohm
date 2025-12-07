@@ -6,8 +6,7 @@ import { GeoSection } from "@/components/sections/japan/GeoSection";
 
 export default function Japan() {
   return (
-    <main id="japan">
-      <div id="main" tabIndex={-1} />
+    <main id="main" data-page="japan" tabIndex={-1}>
 
       <Hero
         imageSrc="/img/japan/hero.avif"

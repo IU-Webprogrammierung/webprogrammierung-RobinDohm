@@ -21,8 +21,7 @@ export default async function CityPage({ params }: { params: CityPageParams }) {
   const { hero, overview, experience, images } = city;
 
   return (
-    <main id={city.slug}>
-      <div id="main" tabIndex={-1} />
+    <main id="main" data-page={city.slug} tabIndex={-1}>
 
       {/* Hero */}
       <Hero

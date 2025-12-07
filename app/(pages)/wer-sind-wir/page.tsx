@@ -7,8 +7,7 @@ import { banner, momentsContent } from "@/data/wer-sind-wir";
 
 export default function AboutUs() {
   return (
-    <main id="about">
-      <div id="main" tabIndex={-1} />
+    <main id="main" data-page="about" tabIndex={-1}>
       <Hero
         imageSrc="/img/wersindwir/hero.avif"
         imageAlt="Robin und Jessi halten Händchen und blicken aufs Meer vor einer sonnigen Küstenlandschaft"

@@ -5,8 +5,7 @@ import { cityPins, itineraryStops } from "@/data/itinerary";
 
 export default function Home() {
   return (
-    <main id="index">
-      <div id="main" tabIndex={-1} />
+    <main id="main" data-page="index" tabIndex={-1}>
 
       {/* Lade alle Sektionen gemäß Daten */}
       {splitSections.map((section) => (
