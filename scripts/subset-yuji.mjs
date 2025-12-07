@@ -2,7 +2,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import subsetFont from "subset-font";
 
-const GLYPHS = "旅日本東京金沢京都広島大阪";
+const GLYPHS = "旅日本東京金沢京都広島大阪七転び八起き";
 
 const INPUT = "public/fonts/Yuji_Boku/YujiBoku-Regular.woff2";
 const OUTPUT = "public/fonts/Yuji_Boku/YujiBoku-Subset.woff2";
