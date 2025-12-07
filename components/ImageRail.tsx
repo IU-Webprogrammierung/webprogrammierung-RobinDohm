@@ -188,6 +188,9 @@ export function ImageRail({ images, className, title }: ImageRailProps) {
    */
   type WrapperTag = "section" | "div";
   const Wrapper: WrapperTag = title ? "section" : "div";
+  const regionLabel = title
+    ? `${title} (Bilder-Karussell)`
+    : "Bildleiste mit horizontal scrollbaren Bildern";
 
   return (
     <Wrapper
@@ -200,6 +203,7 @@ export function ImageRail({ images, className, title }: ImageRailProps) {
         flex items-center gap-2
       `}
         role="region"
+        aria-label={regionLabel}
         aria-roledescription="Karussell"
       >
         {/* Prev-Button */}
