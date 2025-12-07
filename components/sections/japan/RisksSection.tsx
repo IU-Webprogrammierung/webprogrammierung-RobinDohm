@@ -10,6 +10,10 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 
 export function RisksSection() {
   const [blockA, blockB] = risksContent.blocks;
+  const disastersTitleId = "disasters-title";
+  const disastersDescId = "disasters-desc";
+  const demographyTitleId = "demography-title";
+  const demographyDescId = "demography-desc";
 
   // === Chart 1: Naturkatastrophen ===
   const disastersSeries = blockA.chart.series.map((s) => ({
@@ -140,14 +144,26 @@ export function RisksSection() {
       </div>
 
       {/* Block A – Text + Chart rechts */}
-      <h3 className="mt-4 mb-2 text-xl font-bold">{blockA.title}</h3>
+      <h3 id={disastersTitleId} className="mt-4 mb-2 text-xl font-bold">
+        {blockA.title}
+      </h3>
+      <p className="sr-only" id={disastersDescId}>
+        {`Balkendiagramm mit Kategorien ${blockA.chart.xLabels.join(
+          ", "
+        )} und Reihen ${blockA.chart.series.map((s) => s.name).join(" und ")}.`}
+      </p>
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-5">
         <div className="my-auto space-y-4">
           {blockA.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
-        <div className="h-[220px] w-full rounded border border-line bg-white md:h-[260px] lg:h-[300px]">
+        <div
+          role="group"
+          aria-label={`${blockA.title} - Balkendiagramm`}
+          aria-labelledby={`${disastersTitleId} ${disastersDescId}`}
+          className="h-[220px] w-full rounded border border-line bg-white md:h-[260px] lg:h-[300px]"
+        >
           <ReactApexChart
             options={disastersOptions}
             series={disastersSeries}
@@ -159,9 +175,21 @@ export function RisksSection() {
       </div>
 
       {/* Block B – Chart links, Text rechts (mobil: Text vor Chart) */}
-      <h3 className="mt-4 mb-2 text-xl font-bold">{blockB.title}</h3>
+      <h3 id={demographyTitleId} className="mt-4 mb-2 text-xl font-bold">
+        {blockB.title}
+      </h3>
+      <p className="sr-only" id={demographyDescId}>
+        {`Liniendiagramm mit Kategorien ${blockB.chart.xLabels.join(
+          ", "
+        )} und Reihen ${blockB.chart.series.map((s) => s.name).join(" und ")}.`}
+      </p>
       <div className="grid gap-4 lg:grid-cols-[360px_minmax(0,1fr)] lg:items-start lg:gap-5">
-        <div className="order-2 h-[220px] w-full rounded border border-line bg-white md:h-[260px] lg:order-1 lg:h-[300px]">
+        <div
+          role="group"
+          aria-label={`${blockB.title} - Liniendiagramm`}
+          aria-labelledby={`${demographyTitleId} ${demographyDescId}`}
+          className="order-2 h-[220px] w-full rounded border border-line bg-white md:h-[260px] lg:order-1 lg:h-[300px]"
+        >
           <ReactApexChart
             options={demographyOptions}
             series={demographySeries}
